@@ -25,7 +25,7 @@ If your organization is using CAC Ontology, we'd love to hear from you! Becoming
 
 To be listed as an adopter:
 
-1. Contact the project maintainers through [GitHub Issues](https://github.com/Project-VIC-International/CAC-Ontology/issues) or [Contact page](/contact)
+1. Contact the project maintainers through [GitHub Issues](https://github.com/Project-VIC-International/CAC-Ontology/issues) or [Contact page]({{ '/contact' | relative_url }})
 2. Provide:
    - Organization name
    - Brief description of use case
@@ -67,7 +67,7 @@ Adopters have access to:
 
 ## Related Information
 
-- [Join the Community](/community/join)
-- [Community Overview](/community)
-- [Contact](/contact) - To become a listed adopter
+- [Join the Community]({{ '/community/join' | relative_url }})
+- [Community Overview]({{ '/community' | relative_url }})
+- [Contact]({{ '/contact' | relative_url }}) - To become a listed adopter
 

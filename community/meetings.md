@@ -89,7 +89,7 @@ To propose a meeting topic:
 
 ## Related Information
 
-- [Community Overview](/community)
-- [Join the Community](/community/join)
-- [Contact](/contact) - For meeting-related questions
+- [Community Overview]({{ '/community' | relative_url }})
+- [Join the Community]({{ '/community/join' | relative_url }})
+- [Contact]({{ '/contact' | relative_url }}) - For meeting-related questions
 
