@@ -12,6 +12,8 @@ Welcome to the CAC (Crimes Against Children) Ontology Family! This guide will he
 
 The CAC Ontology Family is a comprehensive semantic framework for modeling child exploitation investigations, operations, legal processes, reporting, offender tradecraft, and digital forensics activities. It extends the **Unified Cyber Ontology (UCO)** and the **Cyber-investigation Analysis Standard Expression (CASE) Ontology**, providing specialized modules for crimes against children investigations.
 
+The CAC Ontology is shepherded by **Project VIC International**, but further development of this initiative is open to any participant. The ontology represents concepts used globally by government and law enforcement agencies, NGOs, academic organizations, and commercial industry, and we plan to continue evolving this family of ontologies to represent new victim-centric language as it develops worldwide.
+
 ## Key Concepts
 
 ### Namespace
