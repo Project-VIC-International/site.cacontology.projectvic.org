@@ -85,7 +85,7 @@ Documentation files in the repository:
 ### Online Documentation
 
 - [Entities A-Z](https://project-vic-international.github.io/cacontology.projectvic.org/entities-az.html) - Complete entity reference
-- [Ontology Documentation](/ontology) - Technical documentation
+- [Ontology Documentation]({{ '/ontology' | relative_url }}) - Technical documentation
 
 ## SPARQL Queries
 
@@ -99,7 +99,7 @@ Example SPARQL queries are available in:
 
 For specific releases and versions:
 
-- [Releases Page](/releases) - Release information
+- [Releases Page]({{ '/releases' | relative_url }}) - Release information
 - [GitHub Releases](https://github.com/Project-VIC-International/CAC-Ontology/releases) - Release downloads
 
 ## File Formats
@@ -120,7 +120,7 @@ All ontology files can be validated using:
 
 ## Related Resources
 
-- [Getting Started](/getting-started) - Installation and setup
-- [Examples](/examples) - Example files and use cases
-- [Resources Overview](/resources) - Additional resources
+- [Getting Started]({{ '/getting-started' | relative_url }}) - Installation and setup
+- [Examples]({{ '/examples' | relative_url }}) - Example files and use cases
+- [Resources Overview]({{ '/resources' | relative_url }}) - Additional resources
 

@@ -1,8 +1,8 @@
 # Site Settings
 title: CAC Ontology
 description: Crimes Against Children Ontology - A comprehensive semantic framework for modeling child exploitation investigations
-baseurl: "/cacontology.projectvic.org"
-url: "https://project-vic-international.github.io"
+baseurl: ""
+url: "https://cacontology.projectvic.org"
 email: ""
 twitter_username: ""
 github_username: "Project-VIC-International"

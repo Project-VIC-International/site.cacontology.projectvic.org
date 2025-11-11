@@ -10,19 +10,19 @@ Comprehensive resources for working with CAC Ontology, including downloads, publ
 
 ## Quick Access
 
-- **[Downloads](/resources/downloads)** - Ontology files and software
-- **[Publications](/resources/publications)** - Research papers and articles
-- **[Presentations](/resources/presentations)** - Conference presentations and talks
-- **[Reference Materials](/resources/reference)** - Documentation and guides
-- **[Libraries](/resources/libraries)** - Software libraries and tools
+- **[Downloads]({{ '/resources/downloads' | relative_url }})** - Ontology files and software
+- **[Publications]({{ '/resources/publications' | relative_url }})** - Research papers and articles
+- **[Presentations]({{ '/resources/presentations' | relative_url }})** - Conference presentations and talks
+- **[Reference Materials]({{ '/resources/reference' | relative_url }})** - Documentation and guides
+- **[Libraries]({{ '/resources/libraries' | relative_url }})** - Software libraries and tools
 
 ## Documentation
 
 ### Online Documentation
 
 - **[Entities A-Z](https://project-vic-international.github.io/cacontology.projectvic.org/entities-az.html)** - Complete entity reference
-- **[Ontology Documentation](/ontology)** - Technical documentation
-- **[Getting Started Guide](/getting-started)** - Introduction and quick start
+- **[Ontology Documentation]({{ '/ontology' | relative_url }})** - Technical documentation
+- **[Getting Started Guide]({{ '/getting-started' | relative_url }})** - Introduction and quick start
 
 ### Repository Documentation
 
@@ -36,7 +36,7 @@ The [GitHub repository](https://github.com/Project-VIC-International/CAC-Ontolog
 
 ## Examples and Tutorials
 
-- **[Examples Gallery](/examples)** - 30+ real-world examples
+- **[Examples Gallery]({{ '/examples' | relative_url }})** - 30+ real-world examples
 - **SPARQL Queries** - Example queries in `example_SPARQL_queries/` directory
 - **Analytics Demonstrations** - Located in `analytics_demonstration/` directory
 
@@ -77,13 +77,13 @@ docker compose -f testing/docker-compose.yaml up -d
 
 ## Support Resources
 
-- [Community](/community) - Join discussions and get help
-- [Contact](/contact) - Reach out with questions
+- [Community]({{ '/community' | relative_url }}) - Join discussions and get help
+- [Contact]({{ '/contact' | relative_url }}) - Reach out with questions
 - [GitHub Issues](https://github.com/Project-VIC-International/CAC-Ontology/issues) - Report bugs and request features
 
 ## Additional Resources
 
-- [Releases](/releases) - Version information and downloads
+- [Releases]({{ '/releases' | relative_url }}) - Version information and downloads
 - [Contributing Guidelines](https://github.com/Project-VIC-International/CAC-Ontology/blob/main/CONTRIBUTING.md) - How to contribute
 - [License](https://github.com/Project-VIC-International/CAC-Ontology/blob/main/license.md) - Apache License 2.0
 

@@ -41,7 +41,7 @@ CAC Ontology is part of the Project VIC International initiative:
 
 ### Join the Community
 
-- Visit the [Community section](/community) to learn about joining
+- Visit the [Community section]({{ '/community' | relative_url }}) to learn about joining
 - Participate in community meetings and events
 - Contribute to the project (see [Contributing Guidelines](https://github.com/Project-VIC-International/CAC-Ontology/blob/main/CONTRIBUTING.md))
 
@@ -116,10 +116,10 @@ CAC Ontology is developed by the Project VIC International community with suppor
 
 ## Additional Resources
 
-- **Documentation**: [Ontology Documentation](/ontology)
-- **Examples**: [Examples Gallery](/examples)
-- **Resources**: [Resources Page](/resources)
-- **Getting Started**: [Getting Started Guide](/getting-started)
+- **Documentation**: [Ontology Documentation]({{ '/ontology' | relative_url }})
+- **Examples**: [Examples Gallery]({{ '/examples' | relative_url }})
+- **Resources**: [Resources Page]({{ '/resources' | relative_url }})
+- **Getting Started**: [Getting Started Guide]({{ '/getting-started' | relative_url }})
 
 ---
 

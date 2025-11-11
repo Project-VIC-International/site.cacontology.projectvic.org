@@ -107,7 +107,7 @@ Libraries for Unified Cyber Ontology:
 
 If you've developed a library or tool for working with CAC Ontology:
 
-1. Contact the project maintainers through [GitHub Issues](https://github.com/Project-VIC-International/CAC-Ontology/issues) or [Contact page](/contact)
+1. Contact the project maintainers through [GitHub Issues](https://github.com/Project-VIC-International/CAC-Ontology/issues) or [Contact page]({{ '/contact' | relative_url }})
 2. Provide:
    - Library/tool name
    - Description
@@ -119,7 +119,7 @@ If you've developed a library or tool for working with CAC Ontology:
 
 ## Related Resources
 
-- [Downloads](/resources/downloads) - Ontology files and software
-- [Reference Materials](/resources/reference) - Documentation and guides
-- [Resources Overview](/resources) - All resources
+- [Downloads]({{ '/resources/downloads' | relative_url }}) - Ontology files and software
+- [Reference Materials]({{ '/resources/reference' | relative_url }}) - Documentation and guides
+- [Resources Overview]({{ '/resources' | relative_url }}) - All resources
 
