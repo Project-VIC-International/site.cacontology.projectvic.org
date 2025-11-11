@@ -14,9 +14,9 @@ Welcome! We're excited to have you join the CAC Ontology community. Here's how t
 
 Before joining, familiarize yourself with:
 
-- [Getting Started Guide](/getting-started) - Introduction to CAC Ontology
-- [Ontology Documentation](/ontology) - Technical documentation
-- [Examples](/examples) - Real-world use cases
+- [Getting Started Guide]({{ '/getting-started' | relative_url }}) - Introduction to CAC Ontology
+- [Ontology Documentation]({{ '/ontology' | relative_url }}) - Technical documentation
+- [Examples]({{ '/examples' | relative_url }}) - Real-world use cases
 - [GitHub Repository](https://github.com/Project-VIC-International/CAC-Ontology) - Source code and issues
 
 ### 2. Set Up Your Environment
@@ -124,11 +124,11 @@ For questions about CAC Ontology or to join the CAC Ontology effort, please send
 
 If you need help:
 
-1. **Check Documentation** - Review the [Getting Started Guide](/getting-started) and [Documentation](/ontology)
+1. **Check Documentation** - Review the [Getting Started Guide]({{ '/getting-started' | relative_url }}) and [Documentation]({{ '/ontology' | relative_url }})
 2. **Search Issues** - Look for similar questions in [GitHub Issues](https://github.com/Project-VIC-International/CAC-Ontology/issues)
 3. **Email Support** - Send questions or requests to join to **support@projectvic.zendesk.com**
 4. **Ask Questions** - Open a new issue or discussion on GitHub
-5. **Contact** - Reach out through the [Contact page](/contact)
+5. **Contact** - Reach out through the [Contact page]({{ '/contact' | relative_url }})
 
 ## Recognition
 
@@ -149,8 +149,8 @@ Welcome to the community!
 
 ## Related Links
 
-- [Community Overview](/community)
-- [Adopters](/community/adopters)
-- [Meetings](/community/meetings)
-- [Contact](/contact)
+- [Community Overview]({{ '/community' | relative_url }})
+- [Adopters]({{ '/community/adopters' | relative_url }})
+- [Meetings]({{ '/community/meetings' | relative_url }})
+- [Contact]({{ '/contact' | relative_url }})
 

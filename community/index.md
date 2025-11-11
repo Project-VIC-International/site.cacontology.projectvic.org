@@ -22,9 +22,9 @@ The CAC Ontology community brings together:
 
 ### Join the Community
 
-- **[How to Join](/community/join)** - Steps to become part of the community
-- **[Adopters](/community/adopters)** - Organizations using CAC Ontology
-- **[Meetings](/community/meetings)** - Community meetings and events
+- **[How to Join]({{ '/community/join' | relative_url }})** - Steps to become part of the community
+- **[Adopters]({{ '/community/adopters' | relative_url }})** - Organizations using CAC Ontology
+- **[Meetings]({{ '/community/meetings' | relative_url }})** - Community meetings and events
 
 ### Ways to Contribute
 
@@ -90,10 +90,10 @@ Before contributing, please review:
 
 ## Community Resources
 
-- [Getting Started Guide](/getting-started) - For new community members
-- [Documentation](/ontology) - Technical documentation
-- [Examples](/examples) - Real-world examples
-- [Resources](/resources) - Additional materials
+- [Getting Started Guide]({{ '/getting-started' | relative_url }}) - For new community members
+- [Documentation]({{ '/ontology' | relative_url }}) - Technical documentation
+- [Examples]({{ '/examples' | relative_url }}) - Real-world examples
+- [Resources]({{ '/resources' | relative_url }}) - Additional materials
 
 ## Recognition
 
@@ -107,8 +107,8 @@ We recognize and appreciate all community contributions:
 
 ## Related Links
 
-- [Join the Community](/community/join)
-- [Adopters](/community/adopters)
-- [Meetings](/community/meetings)
-- [Contact](/contact)
+- [Join the Community]({{ '/community/join' | relative_url }})
+- [Adopters]({{ '/community/adopters' | relative_url }})
+- [Meetings]({{ '/community/meetings' | relative_url }})
+- [Contact]({{ '/contact' | relative_url }})
 
