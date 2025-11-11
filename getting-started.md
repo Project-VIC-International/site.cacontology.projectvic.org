@@ -109,13 +109,13 @@ docker compose -f testing/docker-compose.yaml up -d
 
 ## Next Steps
 
-1. **Explore the Ontology**: Visit the [Ontology Documentation](/ontology) to learn about all available modules and classes.
+1. **Explore the Ontology**: Visit the [Ontology Documentation]({{ '/ontology' | relative_url }}) to learn about all available modules and classes.
 
-2. **View Examples**: Check out the [Examples Gallery](/examples) to see real-world use cases from actual investigations.
+2. **View Examples**: Check out the [Examples Gallery]({{ '/examples' | relative_url }}) to see real-world use cases from actual investigations.
 
-3. **Join the Community**: Get involved with the [CAC Ontology Community](/community) to connect with other users and contributors.
+3. **Join the Community**: Get involved with the [CAC Ontology Community]({{ '/community' | relative_url }}) to connect with other users and contributors.
 
-4. **Access Resources**: Browse [Resources](/resources) for downloads, publications, and reference materials.
+4. **Access Resources**: Browse [Resources]({{ '/resources' | relative_url }}) for downloads, publications, and reference materials.
 
 ## Integration with CASE and UCO
 
@@ -139,6 +139,6 @@ Comprehensive documentation is available:
 
 - **Email Support**: For questions about CAC Ontology or to join the effort, email [support@projectvic.zendesk.com](mailto:support@projectvic.zendesk.com)
 - **GitHub Issues**: Report bugs or request features on the [GitHub repository](https://github.com/Project-VIC-International/CAC-Ontology/issues)
-- **Community**: Join discussions in the [Community section](/community)
-- **Contact**: Reach out via our [Contact page](/contact)
+- **Community**: Join discussions in the [Community section]({{ '/community' | relative_url }})
+- **Contact**: Reach out via our [Contact page]({{ '/contact' | relative_url }})
 
