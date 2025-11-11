@@ -1,0 +1,58 @@
+# Site Settings
+title: CAC Ontology
+description: Crimes Against Children Ontology - A comprehensive semantic framework for modeling child exploitation investigations
+baseurl: ""
+url: "https://cacontology.projectvic.org"
+email: ""
+twitter_username: ""
+github_username: "Project-VIC-International"
+github_repo: "CAC-Ontology"
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - .gitignore
+
+# Navigation
+navigation:
+  - title: Getting Started
+    url: /getting-started
+  - title: Releases
+    url: /releases
+  - title: Ontology
+    url: /ontology
+  - title: Examples
+    url: /examples
+  - title: Community
+    url: /community
+  - title: Resources
+    url: /resources
+  - title: Contact
+    url: /contact
+
+# Theme settings
+theme: minima
+
+# Custom variables
+cac_ontology:
+  namespace: "https://cacontology.projectvic.org"
+  extends: ["CASE", "UCO"]
+  modules: 30
+  domain_areas: 6
+

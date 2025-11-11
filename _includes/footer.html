@@ -1,0 +1,55 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <h3>About CAC Ontology</h3>
+        <p class="text">{{ site.description }}</p>
+        <p class="text">
+          The CAC (Crimes Against Children) Ontology Family extends the Unified Cyber Ontology (UCO) and the Cyber-investigation Analysis Standard Expression (CASE) Ontology.
+        </p>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="{{ '/getting-started' | relative_url }}">Getting Started</a></li>
+          <li><a href="{{ '/ontology' | relative_url }}">Ontology Documentation</a></li>
+          <li><a href="{{ '/examples' | relative_url }}">Examples</a></li>
+          <li><a href="{{ '/community' | relative_url }}">Community</a></li>
+          <li><a href="{{ '/resources' | relative_url }}">Resources</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <h3>Connect</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="https://github.com/{{ site.github_username }}/{{ site.github_repo }}" target="_blank" rel="noopener">
+              GitHub Repository
+            </a>
+          </li>
+          <li>
+            <a href="https://projectvic.org" target="_blank" rel="noopener">
+              Project VIC International
+            </a>
+          </li>
+          <li>
+            <a href="{{ '/contact' | relative_url }}">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="text">
+        &copy; {{ 'now' | date: "%Y" }} Project VIC International. 
+        Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">Apache License 2.0</a>.
+      </p>
+      <p class="text">
+        For website terms of use, trademark policy and other project policies please see 
+        <a href="https://lfprojects.org" target="_blank" rel="noopener">LF Projects</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+

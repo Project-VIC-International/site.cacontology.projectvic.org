@@ -1,0 +1,286 @@
+// Project VIC Color Palette
+// Based on projectvic.org branding
+
+// Primary Colors
+$pv-primary: #1e3a8a;        // Deep blue
+$pv-primary-dark: #1e40af;  // Darker blue
+$pv-primary-light: #3b82f6; // Light blue
+$pv-secondary: #6366f1;      // Indigo/purple
+$pv-accent: #8b5cf6;         // Purple accent
+
+// Neutral Colors
+$pv-text: #1f2937;           // Dark gray text
+$pv-text-light: #6b7280;    // Light gray text
+$pv-bg: #ffffff;             // White background
+$pv-bg-light: #f9fafb;      // Light gray background
+$pv-border: #e5e7eb;        // Border gray
+
+// Semantic Colors
+$pv-success: #10b981;        // Green
+$pv-warning: #f59e0b;        // Amber
+$pv-error: #ef4444;          // Red
+$pv-info: #3b82f6;           // Blue
+
+// Override Minima theme variables
+$brand-color: $pv-primary;
+$brand-color-light: $pv-primary-light;
+$text-color: $pv-text;
+$background-color: $pv-bg;
+$code-background-color: $pv-bg-light;
+
+// Typography
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$code-font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+// Spacing
+$spacing-unit: 1.5rem;
+
+// Border radius
+$border-radius: 4px;
+
+// Custom styles matching CASE site design
+.site-header {
+  background-color: $pv-primary;
+  border-bottom: 3px solid $pv-secondary;
+  
+  .site-title {
+    color: white;
+    font-weight: 600;
+    
+    &:hover {
+      color: $pv-primary-light;
+    }
+  }
+  
+  .site-nav {
+    .page-link {
+      color: rgba(255, 255, 255, 0.9);
+      
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.hero-section {
+  background: linear-gradient(135deg, $pv-primary 0%, $pv-secondary 100%);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  
+  h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: $pv-secondary;
+  color: white;
+  text-decoration: none;
+  border-radius: $border-radius;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: $pv-accent;
+    color: white;
+  }
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: transparent;
+  color: $pv-primary;
+  border: 2px solid $pv-primary;
+  text-decoration: none;
+  border-radius: $border-radius;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: $pv-primary;
+    color: white;
+  }
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  
+  .feature-card {
+    padding: 2rem;
+    background-color: $pv-bg-light;
+    border-radius: $border-radius;
+    border-left: 4px solid $pv-primary;
+    
+    h3 {
+      color: $pv-primary;
+      margin-top: 0;
+    }
+  }
+}
+
+.site-footer {
+  background-color: $pv-text;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 2rem 0;
+  margin-top: 4rem;
+  border-top: 3px solid $pv-secondary;
+  
+  a {
+    color: rgba(255, 255, 255, 0.9);
+    
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+// Content styling
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+// Navigation styling
+.main-nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    
+    li {
+      a {
+        color: $pv-text;
+        text-decoration: none;
+        font-weight: 500;
+        
+        &:hover {
+          color: $pv-primary;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Code blocks
+.highlight {
+  background-color: $pv-bg-light;
+  border-left: 4px solid $pv-primary;
+  padding: 1rem;
+  border-radius: $border-radius;
+}
+
+// Links
+a {
+  color: $pv-primary;
+  
+  &:hover {
+    color: $pv-primary-dark;
+  }
+}
+
+// Footer styling
+.footer-col-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+  
+  .footer-col {
+    h3 {
+      color: white;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+// Intro section
+.intro-section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  
+  h2 {
+    color: $pv-primary;
+    margin-bottom: 1.5rem;
+  }
+  
+  p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+}
+
+// Features section
+.features-section {
+  margin: 3rem 0;
+  
+  h2 {
+    color: $pv-primary;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+// Quick links section
+.quick-links {
+  margin: 3rem 0;
+  
+  h2 {
+    color: $pv-primary;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .feature-card a {
+    text-decoration: none;
+    color: $pv-primary;
+    
+    &:hover {
+      color: $pv-primary-dark;
+    }
+  }
+}
+
