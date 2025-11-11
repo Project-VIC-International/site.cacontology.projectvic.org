@@ -12,7 +12,7 @@ Download CAC Ontology files, software, and related resources.
 
 ### GitHub Repository
 
-All ontology files are available from the [CAC-Ontology GitHub repository](https://github.com/Project-VIC-International/CAC-Ontology):
+All ontology files are available from the [CAC-Ontology GitHub repository](https://github.com/Project-VIC-International/CAC-Ontology){:target="_blank" rel="noopener noreferrer"}:
 
 ```bash
 git clone https://github.com/Project-VIC-International/CAC-Ontology.git
@@ -85,7 +85,7 @@ Documentation files in the repository:
 ### Online Documentation
 
 - [Entities A-Z](https://project-vic-international.github.io/cacontology.projectvic.org/entities-az.html) - Complete entity reference
-- [Ontology Documentation]({{ '/ontology' | relative_url }}) - Technical documentation
+- [Ontology Documentation](https://ontology.cacontology.projectvic.org/){:target="_blank" rel="noopener noreferrer"} - Technical documentation
 
 ## SPARQL Queries
 
@@ -100,7 +100,7 @@ Example SPARQL queries are available in:
 For specific releases and versions:
 
 - [Releases Page]({{ '/releases' | relative_url }}) - Release information
-- [GitHub Releases](https://github.com/Project-VIC-International/CAC-Ontology/releases) - Release downloads
+- [GitHub Releases](https://github.com/Project-VIC-International/CAC-Ontology/releases){:target="_blank" rel="noopener noreferrer"} - Release downloads
 
 ## File Formats
 

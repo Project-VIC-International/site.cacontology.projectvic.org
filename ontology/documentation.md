@@ -6,6 +6,8 @@ permalink: /ontology/documentation
 
 # Complete Documentation
 
+> **📚 Hosted Documentation**: For the most up-to-date and comprehensive technical documentation, visit the [hosted documentation site](https://ontology.cacontology.projectvic.org/){:target="_blank" rel="noopener noreferrer"}.
+
 Comprehensive technical documentation for the CAC Ontology Family.
 
 ## Online Documentation
@@ -18,7 +20,7 @@ This comprehensive reference provides detailed information about every class, pr
 
 ## Repository Documentation
 
-The [CAC-Ontology GitHub repository](https://github.com/Project-VIC-International/CAC-Ontology) contains extensive documentation:
+The [CAC-Ontology GitHub repository](https://github.com/Project-VIC-International/CAC-Ontology){:target="_blank" rel="noopener noreferrer"} contains extensive documentation:
 
 ### Core Documentation Files
 
@@ -105,7 +107,7 @@ To improve documentation:
 1. Fork the repository
 2. Edit documentation files in the `docs/` directory
 3. Submit a pull request
-4. See [CONTRIBUTING.md](https://github.com/Project-VIC-International/CAC-Ontology/blob/main/CONTRIBUTING.md) for guidelines
+4. See [CONTRIBUTING.md](https://github.com/Project-VIC-International/CAC-Ontology/blob/main/CONTRIBUTING.md){:target="_blank" rel="noopener noreferrer"} for guidelines
 
 ## Additional Resources
 
