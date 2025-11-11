@@ -10,6 +10,8 @@ The CAC Ontology project is a community-driven initiative. Join us in developing
 
 ## About the Community
 
+The CAC Ontology is shepherded by **Project VIC International**, but further development of this initiative is open to any participant. The CAC Ontology represents concepts used globally by diverse organizations, and we welcome contributions from all sectors.
+
 The CAC Ontology community brings together:
 
 - **Law Enforcement Agencies** - Investigators and digital forensics professionals
@@ -17,6 +19,12 @@ The CAC Ontology community brings together:
 - **Prosecutors and Legal Professionals** - Supporting legal processes
 - **Researchers and Academics** - Advancing the field through research
 - **Developers and Technologists** - Building tools and integrations
+- **Government Agencies** - Representing concepts used in official language and processes
+- **NGOs** - Contributing victim-centric perspectives and terminology
+- **Academic Organizations** - Advancing research and standardization
+- **Commercial Industry** - Providing technical expertise and real-world applications
+
+We understand that not all language is represented, and we actively seek concepts, documents, and data from persons and organizations worldwide to improve the CAC Ontology.
 
 ## Get Involved
 
