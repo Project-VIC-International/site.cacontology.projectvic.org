@@ -6,6 +6,8 @@ permalink: /ontology
 
 # Ontology Documentation
 
+> **📚 Detailed Documentation Available**: For comprehensive technical documentation, visit the [hosted documentation site](https://ontology.cacontology.projectvic.org/){:target="_blank" rel="noopener noreferrer"}. You can also explore the [GitHub repository](https://github.com/Project-VIC-International/CAC-Ontology){:target="_blank" rel="noopener noreferrer"} for source code, examples, and additional resources.
+
 The CAC (Crimes Against Children) Ontology Family provides a comprehensive semantic framework for modeling child exploitation investigations. This section provides detailed documentation about the ontology structure, modules, and usage.
 
 ## Overview
@@ -94,12 +96,12 @@ This integration ensures compatibility with existing cyber investigation tools a
 ## Documentation Resources
 
 - **[Versioning](/ontology/versioning)** - Version information and release history
-- **[Full Documentation](/ontology/documentation)** - Complete technical documentation
+- **[Full Documentation](https://ontology.cacontology.projectvic.org/){:target="_blank" rel="noopener noreferrer"}** - Complete technical documentation
 - **[Entities A-Z](https://project-vic-international.github.io/cacontology.projectvic.org/entities-az.html)** - Complete entity reference
 
 ## Repository Documentation
 
-Additional documentation is available in the [GitHub repository](https://github.com/Project-VIC-International/CAC-Ontology):
+Additional documentation is available in the [GitHub repository](https://github.com/Project-VIC-International/CAC-Ontology){:target="_blank" rel="noopener noreferrer"}:
 
 - **Architecture**: `docs/architecture.md` - Complete system architecture and module relationships
 - **Design**: `docs/design.md` - Design principles and technical specifications

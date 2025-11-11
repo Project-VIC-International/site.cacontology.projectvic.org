@@ -109,7 +109,7 @@ docker compose -f testing/docker-compose.yaml up -d
 
 ## Next Steps
 
-1. **Explore the Ontology**: Visit the [Ontology Documentation]({{ '/ontology' | relative_url }}) to learn about all available modules and classes.
+1. **Explore the Ontology**: Visit the [Ontology Documentation](https://ontology.cacontology.projectvic.org/){:target="_blank" rel="noopener noreferrer"} to learn about all available modules and classes.
 
 2. **View Examples**: Check out the [Examples Gallery]({{ '/examples' | relative_url }}) to see real-world use cases from actual investigations.
 
@@ -138,7 +138,7 @@ Comprehensive documentation is available:
 ## Support
 
 - **Email Support**: For questions about CAC Ontology or to join the effort, email [support@projectvic.zendesk.com](mailto:support@projectvic.zendesk.com)
-- **GitHub Issues**: Report bugs or request features on the [GitHub repository](https://github.com/Project-VIC-International/CAC-Ontology/issues)
+- **GitHub Issues**: Report bugs or request features on the [GitHub repository](https://github.com/Project-VIC-International/CAC-Ontology/issues){:target="_blank" rel="noopener noreferrer"}
 - **Community**: Join discussions in the [Community section]({{ '/community' | relative_url }})
 - **Contact**: Reach out via our [Contact page]({{ '/contact' | relative_url }})
 
