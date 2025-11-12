@@ -121,6 +121,19 @@ $desktop-min: 1025px;
       padding-bottom: 0.5rem;
     }
   }
+  
+  // Header donate button styling
+  .btn-donate {
+    margin-left: 1rem;
+    white-space: nowrap;
+    
+    @media screen and (max-width: $mobile-max) {
+      display: block;
+      width: 100%;
+      margin: 0.75rem 0 0 0;
+      text-align: center;
+    }
+  }
 }
 
 .hero-section {
@@ -178,6 +191,36 @@ $desktop-min: 1025px;
   &:hover {
     background-color: $pv-primary;
     color: white;
+  }
+}
+
+.btn-donate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  background-color: #FFD700;
+  color: #1f2937;
+  text-decoration: none;
+  border-radius: $border-radius;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 44px;
+  min-width: 44px;
+  border: 2px solid #FFC700;
+  
+  &:hover {
+    background-color: #FFC700;
+    color: #1f2937;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  &:focus {
+    outline: 3px solid $pv-accent;
+    outline-offset: 2px;
   }
 }
 
@@ -287,6 +330,10 @@ a {
       li {
         margin-bottom: 0.5rem;
       }
+    }
+    
+    .footer-donate-wrapper {
+      margin-top: 1.5rem;
     }
   }
 }
@@ -460,6 +507,19 @@ label:focus {
         margin-left: 1.5rem;
         padding: 0.5rem 0;
       }
+    }
+  }
+  
+  // Desktop: Header donate button should be inline with navigation
+  .site-header {
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .btn-donate {
+      margin-left: auto;
     }
   }
 }
