@@ -545,8 +545,9 @@ label:focus {
     .trigger {
       position: absolute;
       top: 100%; // Position below the header
-      left: 0;
-      right: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
       z-index: 100;
       background-color: $pv-primary;
       margin-top: 0.5rem;
