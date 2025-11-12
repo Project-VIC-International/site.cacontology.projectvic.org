@@ -13,15 +13,30 @@
   </head>
 
   <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content">
+    <main id="main-content" class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}
       </div>
     </main>
 
     {%- include footer.html -%}
+    
+    <script>
+      // Enhance navigation accessibility with aria-expanded state
+      (function() {
+        var navTrigger = document.getElementById('nav-trigger');
+        if (navTrigger) {
+          navTrigger.addEventListener('change', function() {
+            this.setAttribute('aria-expanded', this.checked ? 'true' : 'false');
+          });
+          // Set initial state
+          navTrigger.setAttribute('aria-expanded', navTrigger.checked ? 'true' : 'false');
+        }
+      })();
+    </script>
   </body>
 </html>
 
