@@ -153,6 +153,8 @@ $desktop-min: 1025px;
   border-radius: $border-radius;
   font-weight: 600;
   transition: background-color 0.3s ease;
+    box-sizing: border-box;
+    max-width: 100%;
   
   &:hover {
     background-color: $pv-accent;
@@ -170,6 +172,8 @@ $desktop-min: 1025px;
   border-radius: $border-radius;
   font-weight: 600;
   transition: all 0.3s ease;
+    box-sizing: border-box;
+    max-width: 100%;
   
   &:hover {
     background-color: $pv-primary;
@@ -464,7 +468,14 @@ label:focus {
 @media screen and (max-width: $mobile-max) {
   // Ensure mobile navigation menu links are visible
   .site-header .site-nav {
+    .nav-trigger + label {
+      float: none;
+      margin: 0.25rem 0;
+    }
+
     .trigger {
+      background-color: $pv-primary;
+      margin-top: 0.5rem;
       .page-link {
         display: block !important;
         color: rgba(255, 255, 255, 0.9) !important;
@@ -495,6 +506,11 @@ label:focus {
       visibility: visible !important;
     }
   }
+
+  // Avoid any horizontal overflow on small screens
+  html, body {
+    overflow-x: hidden;
+  }
   
   .hero-section {
     padding: 2.5rem 1.5rem;
@@ -513,6 +529,11 @@ label:focus {
       a {
         width: 100%;
         text-align: center;
+      }
+
+      // Remove leftover inline spacing between stacked buttons
+      a + a {
+        margin-left: 0 !important;
       }
     }
   }
