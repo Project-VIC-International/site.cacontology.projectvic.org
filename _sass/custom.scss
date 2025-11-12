@@ -128,10 +128,8 @@ $desktop-min: 1025px;
     white-space: nowrap;
     
     @media screen and (max-width: $mobile-max) {
-      display: block;
-      width: 100%;
-      margin: 0.75rem 0 0 0;
-      text-align: center;
+      padding: 0.5rem 1rem;
+      margin: 0;
     }
   }
 }
@@ -526,14 +524,27 @@ label:focus {
 
 // Mobile First - Base styles for mobile (< 768px)
 @media screen and (max-width: $mobile-max) {
+  // Add flexbox to header wrapper for better alignment on mobile
+  .site-header .wrapper {
+    display: flex;
+    align-items: center;
+  }
+
   // Ensure mobile navigation menu links are visible
   .site-header .site-nav {
+    position: relative;
+    margin-left: auto;
+
     .nav-trigger + label {
       float: none;
       margin: 0.25rem 0;
     }
 
     .trigger {
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 100;
       background-color: $pv-primary;
       margin-top: 0.5rem;
       .page-link {
