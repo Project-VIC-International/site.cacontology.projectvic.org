@@ -128,8 +128,9 @@ $desktop-min: 1025px;
     white-space: nowrap;
     
     @media screen and (max-width: $mobile-max) {
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.75rem;
       margin: 0;
+      font-size: 0.875rem;
     }
   }
 }
@@ -528,11 +529,12 @@ label:focus {
   .site-header .wrapper {
     display: flex;
     align-items: center;
+    position: relative; // Positioning context for the nav menu
+    gap: 1rem; // Add space between nav and donate button
   }
 
   // Ensure mobile navigation menu links are visible
   .site-header .site-nav {
-    position: relative;
     margin-left: auto;
 
     .nav-trigger + label {
@@ -542,6 +544,7 @@ label:focus {
 
     .trigger {
       position: absolute;
+      top: 100%; // Position below the header
       left: 0;
       right: 0;
       z-index: 100;
