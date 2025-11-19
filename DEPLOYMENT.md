@@ -6,7 +6,7 @@ This guide explains how to deploy the CAC Ontology website to GitHub Pages.
 
 - A GitHub repository (either the main CAC-Ontology repo or a separate website repo)
 - GitHub Pages enabled in repository settings
-- Custom domain configured (cacontology.projectvic.org)
+- Custom domain configured (site.cacontology.projectvic.org)
 
 ## Deployment Options
 
@@ -46,29 +46,29 @@ If you prefer to deploy manually:
 
 ## Custom Domain Configuration
 
-The `CNAME` file contains the custom domain: `cacontology.projectvic.org`
+The `CNAME` file contains the custom domain: `site.cacontology.projectvic.org`
 
 **DNS Configuration:**
 
-You'll need to configure DNS records for `cacontology.projectvic.org`:
+You'll need to configure DNS records for `site.cacontology.projectvic.org`:
 
 1. Add a CNAME record pointing to your GitHub Pages URL:
    ```
-   cacontology.projectvic.org → yourusername.github.io
+   site.cacontology.projectvic.org → yourusername.github.io
    ```
 
 2. Or add A records pointing to GitHub's IP addresses:
    ```
-   cacontology.projectvic.org → 185.199.108.153
-   cacontology.projectvic.org → 185.199.109.153
-   cacontology.projectvic.org → 185.199.110.153
-   cacontology.projectvic.org → 185.199.111.153
+   site.cacontology.projectvic.org → 185.199.108.153
+   site.cacontology.projectvic.org → 185.199.109.153
+   site.cacontology.projectvic.org → 185.199.110.153
+   site.cacontology.projectvic.org → 185.199.111.153
    ```
 
 **GitHub Configuration:**
 
 1. Go to repository Settings → Pages
-2. Under "Custom domain", enter: `cacontology.projectvic.org`
+2. Under "Custom domain", enter: `site.cacontology.projectvic.org`
 3. Check "Enforce HTTPS" (after DNS propagates)
 
 ## Local Testing

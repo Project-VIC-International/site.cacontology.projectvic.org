@@ -6,7 +6,7 @@ permalink: /ontology/documentation
 
 # Complete Documentation
 
-> **📚 Hosted Documentation**: For the most up-to-date and comprehensive technical documentation, visit the [hosted documentation site](https://ontology.cacontology.projectvic.org/){:target="_blank" rel="noopener noreferrer"}.
+> **📚 Hosted Documentation**: For the most up-to-date and comprehensive technical documentation, visit the [hosted documentation site](https://cacontology.projectvic.org/){:target="_blank" rel="noopener noreferrer"}.
 
 Comprehensive technical documentation for the CAC Ontology Family.
 
@@ -14,7 +14,7 @@ Comprehensive technical documentation for the CAC Ontology Family.
 
 ### Entity Reference
 
-- **[Entities A-Z](https://project-vic-international.github.io/cacontology.projectvic.org/entities-az.html)** - Complete alphabetical reference of all ontology entities (classes, properties, individuals)
+- **[Entities A-Z](https://cacontology.projectvic.org/entities-az.html)** - Complete alphabetical reference of all ontology entities (classes, properties, individuals)
 
 This comprehensive reference provides detailed information about every class, property, and individual defined in the CAC Ontology Family.
 

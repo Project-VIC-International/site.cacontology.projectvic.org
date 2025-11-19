@@ -12,7 +12,7 @@ Reference documentation, guides, and materials for working with CAC Ontology.
 
 ### Online Documentation
 
-- **[Entities A-Z](https://project-vic-international.github.io/cacontology.projectvic.org/entities-az.html)** - Complete alphabetical reference of all ontology entities
+- **[Entities A-Z](https://cacontology.projectvic.org/entities-az.html)** - Complete alphabetical reference of all ontology entities
 - **[Ontology Documentation](/ontology)** - Technical documentation and module information
 - **[Getting Started Guide](/getting-started)** - Introduction and quick start
 
