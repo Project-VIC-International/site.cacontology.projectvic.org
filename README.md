@@ -1,6 +1,6 @@
 # CAC Ontology Website
 
-This is the Jekyll-based website for the CAC (Crimes Against Children) Ontology project, hosted at [cacontology.projectvic.org](https://cacontology.projectvic.org).
+This is the Jekyll-based website for the CAC (Crimes Against Children) Ontology project, hosted at [site.cacontology.projectvic.org](https://site.cacontology.projectvic.org).
 
 ## Overview
 

@@ -84,8 +84,8 @@ Documentation files in the repository:
 
 ### Online Documentation
 
-- [Entities A-Z](https://project-vic-international.github.io/cacontology.projectvic.org/entities-az.html) - Complete entity reference
-- [Ontology Documentation](https://ontology.cacontology.projectvic.org/){:target="_blank" rel="noopener noreferrer"} - Technical documentation
+- [Entities A-Z](https://cacontology.projectvic.org/entities-az.html) - Complete entity reference
+- [Ontology Documentation](https://cacontology.projectvic.org/){:target="_blank" rel="noopener noreferrer"} - Technical documentation
 
 ## SPARQL Queries
 

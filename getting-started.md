@@ -111,7 +111,7 @@ docker compose -f testing/docker-compose.yaml up -d
 
 ## Next Steps
 
-1. **Explore the Ontology**: Visit the [Ontology Documentation](https://ontology.cacontology.projectvic.org/){:target="_blank" rel="noopener noreferrer"} to learn about all available modules and classes.
+1. **Explore the Ontology**: Visit the [Ontology Documentation](https://cacontology.projectvic.org/){:target="_blank" rel="noopener noreferrer"} to learn about all available modules and classes.
 
 2. **View Examples**: Check out the [Examples Gallery]({{ '/examples' | relative_url }}) to see real-world use cases from actual investigations.
 
@@ -135,7 +135,7 @@ Comprehensive documentation is available:
 - **Architecture**: See the repository's `docs/architecture.md` for complete system architecture
 - **Design**: See `docs/design.md` for design principles and technical specifications
 - **User Guide**: See `docs/user_doc.md` for detailed user documentation
-- **Entities A-Z**: View the [complete entity reference](https://project-vic-international.github.io/cacontology.projectvic.org/entities-az.html)
+- **Entities A-Z**: View the [complete entity reference](https://cacontology.projectvic.org/entities-az.html)
 
 ## Support
 

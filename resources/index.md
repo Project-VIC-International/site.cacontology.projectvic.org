@@ -20,8 +20,8 @@ Comprehensive resources for working with CAC Ontology, including downloads, publ
 
 ### Online Documentation
 
-- **[Entities A-Z](https://project-vic-international.github.io/cacontology.projectvic.org/entities-az.html)** - Complete entity reference
-- **[Ontology Documentation](https://ontology.cacontology.projectvic.org/){:target="_blank" rel="noopener noreferrer"}** - Technical documentation
+- **[Entities A-Z](https://cacontology.projectvic.org/entities-az.html)** - Complete entity reference
+- **[Ontology Documentation](https://cacontology.projectvic.org/){:target="_blank" rel="noopener noreferrer"}** - Technical documentation
 - **[Getting Started Guide]({{ '/getting-started' | relative_url }})** - Introduction and quick start
 
 ### Repository Documentation
