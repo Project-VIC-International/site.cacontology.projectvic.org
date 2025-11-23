@@ -177,9 +177,9 @@ $desktop-min: 1025px;
 .btn-secondary {
   display: inline-block;
   padding: 0.75rem 2rem;
-  background-color: transparent;
+  background-color: white;
   color: $pv-primary;
-  border: 2px solid $pv-primary;
+  border: 2px solid white;
   text-decoration: none;
   border-radius: $border-radius;
   font-weight: 600;
@@ -188,8 +188,9 @@ $desktop-min: 1025px;
     max-width: 100%;
   
   &:hover {
-    background-color: $pv-primary;
-    color: white;
+    background-color: $pv-bg-light;
+    color: $pv-primary-dark;
+    border-color: $pv-bg-light;
   }
 }
 
