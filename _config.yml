@@ -39,6 +39,8 @@ navigation:
     url: /ontology
   - title: Examples
     url: /examples
+  - title: Developers
+    url: /developers
   - title: Community
     url: /community
   - title: Resources

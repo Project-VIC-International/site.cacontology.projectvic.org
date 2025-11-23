@@ -119,6 +119,8 @@ docker compose -f testing/docker-compose.yaml up -d
 
 4. **Access Resources**: Browse [Resources]({{ '/resources' | relative_url }}) for downloads, publications, and reference materials.
 
+5. **For Developers**: Check out the [Developer Guide]({{ '/developers' | relative_url }}) for detailed instructions on adoption, mapping, and integration.
+
 ## Integration with CASE and UCO
 
 CAC Ontology is designed to work seamlessly with CASE and UCO ontologies. When using CAC Ontology, you can:

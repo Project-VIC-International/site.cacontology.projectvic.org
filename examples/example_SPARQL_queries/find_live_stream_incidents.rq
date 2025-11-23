@@ -1,0 +1,60 @@
+# Query: Q4 find_live_stream_incidents
+# Purpose: Operations dashboard - active live-stream CSA events
+# Parameters: ?from (dateTime), ?to (dateTime), ?limit (integer)
+# Security: TLP-RED content excluded by default
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX cacontology-hotlines: <https://cacontology.projectvic.org/hotlines/2025/core#>
+PREFIX cacontology: <https://cacontology.projectvic.org/0.3#>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+PREFIX uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/>
+PREFIX uco-confidentiality: <https://ontology.unifiedcyberontology.org/uco/confidentiality/>
+
+SELECT ?incident ?platformName ?serviceName ?startTime ?duration ?reportCount
+WHERE {
+    # Parameter defaults
+    VALUES (?from ?to ?limit) {
+        ("2025-01-01T00:00:00Z"^^xsd:dateTime "2025-12-31T23:59:59Z"^^xsd:dateTime 100)
+    }
+    
+    # Core incident data
+    ?incident a cacontology:LiveStreamIncident ;
+             cacontology:startTime ?startTime ;
+             cacontology:usesChannel ?channel ;
+             cacontology-hotlines:triggersReport ?report .
+    
+    # Channel details
+    ?channel a cacontology:StreamingPlatformChannel ;
+             cacontology:platformName ?platformName .
+    
+    # Optional service name
+    OPTIONAL {
+        ?channel cacontology:serviceName ?serviceName .
+    }
+    
+    # Calculate duration
+    OPTIONAL {
+        ?incident cacontology:endTime ?endTime .
+        BIND((?endTime - ?startTime) / "PT1H"^^xsd:duration AS ?duration)
+    }
+    
+    # Report count
+    {
+        SELECT ?incident (COUNT(DISTINCT ?report) as ?reportCount)
+        WHERE {
+            ?incident cacontology-hotlines:triggersReport ?report .
+        }
+        GROUP BY ?incident
+    }
+    
+    # Date range filter
+    FILTER(?startTime >= ?from && ?startTime <= ?to)
+    
+    # Security filter
+    FILTER NOT EXISTS {
+        ?incident uco-confidentiality:TLP-RED ?whatever .
+    }
+}
+ORDER BY DESC(?startTime)
+LIMIT ?limit 

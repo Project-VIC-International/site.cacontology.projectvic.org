@@ -1,0 +1,253 @@
+# Find Platform Cooperation Analytics - Enhanced for ICAC v0.9.0
+# 
+# This query demonstrates the integration of forensics, detection, platforms, and social media evidence ontologies
+# by finding investigations that involve specific platform cooperation patterns,
+# detection results, forensic evidence, and cross-platform correlation.
+#
+# Returns comprehensive analytics on platform cooperation effectiveness,
+# detection accuracy, forensic evidence recovery success rates, and social media evidence patterns.
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
+PREFIX uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/>
+PREFIX cacontology-core: <https://cacontology.projectvic.org#>
+PREFIX cacontology-forensics: <https://cacontology.projectvic.org/forensics#>
+PREFIX cacontology-detection: <https://cacontology.projectvic.org/detection#>
+PREFIX cacontology-platforms: <https://cacontology.projectvic.org/platforms#>
+PREFIX cacontology-taskforce: <https://cacontology.projectvic.org/taskforce#>
+PREFIX cacontology-sentencing: <https://cacontology.projectvic.org/sentencing#>
+PREFIX hotlines-core: <https://cacontology.projectvic.org/hotlines/2025/core#>
+
+SELECT DISTINCT
+    ?investigation
+    ?investigationLabel
+    ?platform
+    ?platformType
+    ?esp
+    ?espHeadquarters
+    ?detectionConfidence
+    ?sarClassification
+    ?forensicMethod
+    ?preservationPeriod
+    ?recoveredFiles
+    
+    # Enhanced Social Media Evidence Features
+    ?socialMediaEvidence
+    ?crossPlatformMatches
+    ?platformsInvestigated
+    ?deviceCorrelation
+    ?searchWarrantRequired
+    
+    # Task Force Coordination
+    ?taskForceInvolved
+    ?multiAgencyCoordination
+    ?legalProcessUsed
+    
+    # Cooperation Effectiveness Metrics
+    ?responseTimeFrame
+    ?emergencyDisclosureCapable
+    ?dataRetentionPeriod
+    
+WHERE {
+    # Main investigation
+    ?investigation rdf:type cacontology-core:ICACInvestigation ;
+                  rdfs:label ?investigationLabel ;
+                  cacontology-core:hasStep ?receiveStep .
+    
+    # Initial cybertip reception
+    ?receiveStep rdf:type cacontology-core:ReceiveCybertipAction ;
+                uco-core:object ?report .
+    
+    # Platform and ESP information
+    ?report hotlines-core:reportedBy ?esp .
+    ?platform cacontology-platforms:operatedBy ?esp ;
+             rdf:type ?platformClass ;
+             rdfs:label ?platformLabel ;
+             cacontology-platforms:platformType ?platformType .
+    
+    ?esp rdf:type cacontology-platforms:ElectronicServiceProvider ;
+        rdfs:label ?espLabel ;
+        cacontology-platforms:headquarteredIn ?espHeadquarters .
+    
+    # Detection information
+    OPTIONAL {
+        ?investigation cacontology-core:hasStep ?detectionStep .
+        ?detectionStep rdf:type cacontology-detection:AutomatedDetectionAction ;
+                      uco-core:result ?detectionResult .
+        
+        ?detectionResult cacontology-detection:confidenceScore ?detectionConfidence ;
+                        cacontology-detection:sarClassification ?sarClass .
+        
+        ?sarClass rdfs:label ?sarClassification .
+    }
+    
+    # Forensic acquisition information
+    OPTIONAL {
+        ?investigation cacontology-core:hasStep ?forensicStep .
+        ?forensicStep rdf:type cacontology-forensics:ForensicAcquisitionAction ;
+                     cacontology-forensics:acquisitionMethod ?forensicMethod .
+    }
+    
+    # Platform cooperation information
+    OPTIONAL {
+        ?investigation cacontology-core:hasStep ?legalStep .
+        ?legalStep rdf:type cacontology-core:LegalProcessAction ;
+                  uco-core:result ?preservationAction .
+        
+        ?preservationAction rdf:type cacontology-platforms:DataPreservationAction ;
+                           cacontology-platforms:preservationPeriod ?preservationPeriod .
+    }
+    
+    # Recovered evidence information
+    OPTIONAL {
+        ?investigation cacontology-core:hasStep ?analysisStep .
+        ?analysisStep rdf:type cacontology-forensics:MetadataExtractionAction ;
+                     uco-core:result ?recoveredEvidence .
+        
+        ?recoveredEvidence rdf:type cacontology-forensics:RecoveredFile ;
+                          rdfs:label ?recoveredFiles .
+    }
+    
+    # Enhanced Social Media Evidence Analysis
+    OPTIONAL {
+        SELECT ?investigation 
+               (COUNT(DISTINCT ?socialMedia) AS ?socialMediaEvidence)
+               (COUNT(DISTINCT ?crossPlatform) AS ?crossPlatformMatches)
+               (MAX(?platformCount) AS ?platformsInvestigated)
+               (COUNT(DISTINCT ?deviceCorr) AS ?deviceCorrelation)
+               (SAMPLE(?searchWarrant) AS ?searchWarrantRequired)
+        WHERE {
+            ?socialMedia rdf:type cacontology-platforms:SocialMediaEvidence ;
+                cacontology-platforms:foundOnSocialMedia true .
+            
+            OPTIONAL {
+                ?crossPlatform rdf:type cacontology-platforms:CrossPlatformEvidence ;
+                    cacontology-platforms:platformsInvestigated ?platformCount .
+            }
+            
+            OPTIONAL {
+                ?socialMedia cacontology-platforms:correlatesWithDevice ?deviceCorr .
+            }
+            
+            OPTIONAL {
+                ?socialMedia cacontology-platforms:searchWarrantRequired ?searchWarrant .
+            }
+        }
+        GROUP BY ?investigation
+    }
+    
+    # Task Force Coordination
+    OPTIONAL {
+        ?taskForceInvolved rdf:type cacontology-taskforce:ICACtaskForce ;
+            cacontology-taskforce:handledInvestigation ?investigation .
+        
+        OPTIONAL {
+            ?multiAgency rdf:type cacontology-platforms:PlatformInvestigationCoordination ;
+                cacontology-platforms:coordinatedBy ?taskForceInvolved .
+            BIND("COORDINATED" AS ?multiAgencyCoordination)
+        }
+    }
+    
+    # Legal Process Analysis
+    OPTIONAL {
+        ?evidence rdf:type cacontology-platforms:SocialMediaEvidence ;
+            cacontology-platforms:legalProcessUsed ?legalProcessUsed .
+    }
+    
+    # Platform Cooperation Capabilities
+    OPTIONAL {
+        ?platform cacontology-platforms:hasLegalComplianceCapability ?compliance .
+        ?compliance cacontology-platforms:responseTimeFrame ?responseTimeFrame ;
+                   cacontology-platforms:emergencyDisclosureCapable ?emergencyDisclosureCapable .
+    }
+    
+    OPTIONAL {
+        ?platform cacontology-platforms:hasDataRetentionPolicy ?retention .
+        ?retention cacontology-platforms:userDataRetentionPeriod ?dataRetentionPeriod .
+    }
+    
+    # Filter constraints (can be customized)
+    FILTER(?detectionConfidence >= 0.80 || !BOUND(?detectionConfidence))
+    FILTER(?preservationPeriod >= 30 || !BOUND(?preservationPeriod))
+    FILTER(?socialMediaEvidence > 0 || !BOUND(?socialMediaEvidence))
+    
+    # Bind display variables
+    BIND(COALESCE(?platformLabel, "Unknown Platform") as ?platform)
+}
+ORDER BY DESC(?detectionConfidence) DESC(?socialMediaEvidence) ?investigationLabel
+
+# Additional query for platform cooperation effectiveness metrics
+;
+
+SELECT 
+    ?platformType
+    (COUNT(DISTINCT ?investigation) AS ?investigationCount)
+    (AVG(?detectionConfidence) AS ?avgDetectionConfidence)
+    (AVG(?preservationPeriod) AS ?avgPreservationPeriod)
+    (AVG(?responseTimeFrame) AS ?avgResponseTime)
+    (AVG(?socialMediaEvidence) AS ?avgSocialMediaEvidence)
+    (AVG(?crossPlatformMatches) AS ?avgCrossPlatformMatches)
+    (AVG(?platformsInvestigated) AS ?avgPlatformsPerCase)
+    (AVG(CASE WHEN ?emergencyDisclosureCapable = true THEN 1.0 ELSE 0.0 END) AS ?emergencyCapabilityRate)
+    (AVG(CASE WHEN ?searchWarrantRequired = true THEN 1.0 ELSE 0.0 END) AS ?searchWarrantRequiredRate)
+    (AVG(?dataRetentionPeriod) AS ?avgDataRetentionDays)
+
+WHERE {
+    ?investigation rdf:type cacontology-core:ICACInvestigation .
+    
+    ?platform cacontology-platforms:platformType ?platformType .
+    
+    OPTIONAL {
+        ?detectionResult cacontology-detection:confidenceScore ?detectionConfidence .
+    }
+    
+    OPTIONAL {
+        ?preservationAction cacontology-platforms:preservationPeriod ?preservationPeriod .
+    }
+    
+    OPTIONAL {
+        ?compliance cacontology-platforms:responseTimeFrame ?responseTimeFrame ;
+                   cacontology-platforms:emergencyDisclosureCapable ?emergencyDisclosureCapable .
+    }
+    
+    OPTIONAL {
+        ?retention cacontology-platforms:userDataRetentionPeriod ?dataRetentionPeriod .
+    }
+    
+    # Social Media Evidence Metrics
+    OPTIONAL {
+        SELECT ?investigation 
+               (COUNT(DISTINCT ?socialMedia) AS ?socialMediaEvidence)
+               (COUNT(DISTINCT ?crossPlatform) AS ?crossPlatformMatches)
+               (MAX(?platformCount) AS ?platformsInvestigated)
+               (SAMPLE(?searchWarrant) AS ?searchWarrantRequired)
+        WHERE {
+            ?socialMedia rdf:type cacontology-platforms:SocialMediaEvidence ;
+                cacontology-platforms:foundOnSocialMedia true .
+            
+            OPTIONAL {
+                ?crossPlatform rdf:type cacontology-platforms:CrossPlatformEvidence ;
+                    cacontology-platforms:platformsInvestigated ?platformCount .
+            }
+            
+            OPTIONAL {
+                ?socialMedia cacontology-platforms:searchWarrantRequired ?searchWarrant .
+            }
+        }
+        GROUP BY ?investigation
+    }
+}
+GROUP BY ?platformType
+ORDER BY DESC(?avgDetectionConfidence) DESC(?investigationCount)
+
+# Expected results show:
+# 1. Investigation details with enhanced platform context and social media evidence
+# 2. Detection confidence and classification results with cross-platform correlation
+# 3. Forensic methods and evidence recovery with device-social media correlation
+# 4. Platform cooperation metrics including emergency capabilities and response times
+# 5. Task force coordination and multi-agency investigation support
+# 6. Cross-platform evidence analysis and search warrant requirements
+# 7. Effectiveness metrics by platform type showing cooperation patterns 

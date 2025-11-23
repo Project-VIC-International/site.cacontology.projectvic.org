@@ -1,0 +1,73 @@
+# Query: Q7 find_rescue_chains
+# Purpose: Investigative analysis - trace successful rescues from report to victim
+# Parameters: ?from (dateTime), ?to (dateTime), ?limit (integer)
+# Security: TLP-RED content excluded by default
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX cacontology-hotlines: <https://cacontology.projectvic.org/hotlines/2025/core#>
+PREFIX cacontology: <https://cacontology.projectvic.org/0.3#>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+PREFIX uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/>
+PREFIX uco-confidentiality: <https://ontology.unifiedcyberontology.org/uco/confidentiality/>
+
+SELECT DISTINCT ?report ?reportType ?reportTime ?reportOrg
+       ?investigation ?investigationStatus ?investigationOrg
+       ?forwardAction ?forwardTime ?forwardOrg
+       ?rescueAction ?rescueStartTime ?rescueEndTime ?rescueOrg # Added rescueEndTime
+       ?victim ?victimAge ?victimGender
+       ?evidenceCount ?daysToForward ?daysToRescue
+WHERE {
+    # Parameter defaults
+    VALUES (?from ?to ?limit) {
+        ("2025-01-01T00:00:00Z"^^xsd:dateTime "2025-12-31T23:59:59Z"^^xsd:dateTime 100)
+    }
+    
+    ?report a ?reportType ;
+            cacontology-hotlines:createdTime ?reportTime ;
+            cacontology-hotlines:receivedBy ?reportOrg ;
+            cacontology-hotlines:hasEvidence ?evidence .
+    
+    {
+        SELECT ?report (COUNT(?evidence) as ?evidenceCount)
+        WHERE {
+            ?report cacontology-hotlines:hasEvidence ?evidence .
+        }
+        GROUP BY ?report
+    }
+    
+    ?report cacontology-hotlines:triggersAction{1,6} ?forwardAction . # Path length limit
+    ?forwardAction a cacontology-hotlines:ForwardToLEAction ;
+                  cacontology-hotlines:startTime ?forwardTime ;
+                  cacontology-hotlines:forwardsTo ?forwardOrg .
+    
+    ?investigation a cacontology:ICACInvestigation ; # Changed from cacontology-hotlines:ICACInvestigation
+                  cacontology:hasReport ?report ; # Changed from cacontology-hotlines:hasReport
+                  cacontology:status ?investigationStatus ; # Changed from cacontology-hotlines:status
+                  cacontology:conductedBy ?investigationOrg ; # Changed from cacontology-hotlines:conductedBy
+                  cacontology:hasAction{1,6} ?rescueAction . # Path length limit
+    
+    ?rescueAction a cacontology:VictimRescueAction ; # Changed from cacontology-hotlines:VictimRescueAction
+                  cacontology:startTime ?rescueStartTime ; # Changed from cacontology-hotlines:startTime
+                  cacontology:performedBy ?rescueOrg . # Changed from cacontology-hotlines:performedBy
+    OPTIONAL { ?rescueAction cacontology:endTime ?rescueEndTime . } # Added endTime
+    ?rescueAction cacontology:rescuedVictim ?victim . # Changed from cacontology-hotlines:rescuedVictim
+    
+    ?victim cacontology:age ?victimAge ; # Changed from cacontology-hotlines:age
+            cacontology:gender ?victimGender . # Changed from cacontology-hotlines:gender
+    
+    BIND(DAYS(?forwardTime - ?reportTime) AS ?daysToForward)
+    BIND(DAYS(?rescueStartTime - ?reportTime) AS ?daysToRescue)
+    
+    FILTER(?rescueAction cacontology:outcome cacontology:outcome-success) # Changed from cacontology-hotlines:outcome-success
+    FILTER(?reportTime >= ?from && ?reportTime <= ?to)
+
+    # Security filter
+    FILTER NOT EXISTS {
+        ?report uco-confidentiality:TLP-RED ?whatever .
+        ?investigation uco-confidentiality:TLP-RED ?whatever .
+        ?victim uco-confidentiality:TLP-RED ?whatever .
+    }
+}
+ORDER BY DESC(?reportTime)
+LIMIT ?limit 
