@@ -61,6 +61,22 @@ We recommend using **Turtle (.ttl)** or **JSON-LD** for serializing CAC Ontology
     cacontology-core:summary "Initial tip received via hotline." .
 ```
 
+## Validation
+
+The CAC Ontology includes a comprehensive SHACL validation system available in the `testing/` directory of the repository.
+
+### Docker Validation System
+
+You can validate your data using the provided Docker configuration. This system runs automated checks against your RDF data using predefined SHACL shapes.
+
+1.  **Locate Testing Directory**: Access the [validation system](https://github.com/Project-VIC-International/CAC-Ontology/tree/main/testing) in the repository.
+2.  **Run Validation**:
+    ```bash
+    # From the repository root
+    docker compose -f testing/docker-compose.yaml up -d
+    ```
+3.  **Process**: The system will mount your ontology files and example data, validating them against the SHACL shapes defined in the ontology modules.
+
 ## Examples & Resources
 
 We provide extensive resources to assist with implementation:
