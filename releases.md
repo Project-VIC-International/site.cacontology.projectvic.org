@@ -10,7 +10,25 @@ This page tracks releases and version history of the CAC Ontology Family.
 
 ## Latest Release
 
-The latest stable release of CAC Ontology is available on the [GitHub repository](https://github.com/Project-VIC-International/CAC-Ontology).
+The latest stable release of CAC Ontology is available on GitHub:
+
+- Releases: https://github.com/Project-VIC-International/CAC-Ontology/releases
+
+### Latest: v2.10.0 (Feb 16, 2026)
+
+v2.10.0 adds explicit modeling for **Emergency Disclosure Requests (EDRs)** used in time-sensitive missing-child investigations, plus a new example knowledge graph and SPARQL analytics suite.
+
+- Release tag: https://github.com/Project-VIC-International/CAC-Ontology/releases/tag/v2.10.0
+- Changelog entry: https://github.com/Project-VIC-International/CAC-Ontology/blob/main/CHANGELOG.md
+
+Key deliverables introduced in the v2.10.0 release notes include:
+
+- New/updated ontology concepts in the platforms module (`cacontology-platforms.ttl`)
+- Updated SHACL shapes for validation (`cacontology-platforms-shapes.ttl`)
+- New example knowledge graph: `police1-modern-missing-child-investigations-2026-example.ttl`
+- New analytics suite: `police1-modern-missing-child-investigations-2026-analytics.rq`
+
+If you are new, the easiest way to see "what the ontology does" is to open a recent example suite and run its SPARQL queries against the example `.ttl` graph.
 
 ## Version History
 
@@ -45,15 +63,16 @@ git clone https://github.com/Project-VIC-International/CAC-Ontology.git
 
 ### Ontology Files
 
-Ontology files are located in the `ontology/` directory:
+Ontology files are located in the canonical `ontology/` directory:
 
-- Core modules: `cacontology-core.ttl`, `cacontology-hotlines-core.ttl`, `cacontology-us-ncmec.ttl`
-- Domain-specific modules: `cacontology-*.ttl`
-- Validation modules: `cacontology-*-shapes.ttl`
+- https://github.com/Project-VIC-International/CAC-Ontology/tree/main/ontology
 
 ### Examples
 
-Example files based on real-world cases are available in the `examples/` directory.
+Example files based on real-world cases are available in:
+
+- Examples (canonical): https://github.com/Project-VIC-International/CAC-Ontology/tree/main/examples_knowledge_graphs
+- SPARQL analytics suites (canonical): https://github.com/Project-VIC-International/CAC-Ontology/tree/main/example_SPARQL_queries
 
 ## Under Development
 

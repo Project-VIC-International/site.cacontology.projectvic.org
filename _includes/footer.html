@@ -9,6 +9,10 @@
           <li><a href="{{ '/examples' | relative_url }}">Examples</a></li>
           <li><a href="{{ '/community' | relative_url }}">Community</a></li>
           <li><a href="{{ '/resources' | relative_url }}">Resources</a></li>
+          <li><a href="{{ '/accessibility' | relative_url }}">Accessibility</a></li>
+          <li><a href="{{ '/privacy' | relative_url }}">Privacy</a></li>
+          <li><a href="https://cdn.prod.website-files.com/603bd9850e8442d1efe81a47/68ddbbe394bc78131cc20399_Project_VIC_International_Privacy_Policy_01_Oct_2025.pdf" target="_blank" rel="noopener noreferrer">Privacy Policy (PDF)</a></li>
+          <li><a href="#" class="js-open-privacy-settings">Privacy settings</a></li>
         </ul>
         <div class="footer-donate-wrapper">
           <a href="https://secure.givelively.org/donate/project-vic-international-inc/crimes-against-children-cac-ontology" 
@@ -49,4 +53,48 @@
     </div>
   </div>
 </footer>
+
+<div id="consent-banner" class="consent-banner" role="dialog" aria-label="Privacy choices" aria-live="polite" hidden>
+  <div class="consent-banner__inner">
+    <p class="consent-banner__text">
+      This site uses optional third-party services (analytics, embedded media, and support widget). Choose what to enable.
+    </p>
+    <div class="consent-banner__actions">
+      <button type="button" class="btn-primary" id="consent-accept-all">Accept all</button>
+      <button type="button" class="btn-secondary" id="consent-reject">Reject optional</button>
+      <button type="button" class="btn-secondary" id="consent-customize">Customize</button>
+    </div>
+  </div>
+</div>
+
+<div id="consent-settings" class="consent-settings" role="dialog" aria-label="Privacy settings" hidden>
+  <div class="consent-settings__inner">
+    <h2>Privacy settings</h2>
+    <p>
+      You can enable optional features. If disabled, the site still works; these services just won't load.
+    </p>
+    <form>
+      <label class="consent-settings__option">
+        <input type="checkbox" id="consent-analytics">
+        Analytics (Google Analytics)
+      </label>
+      <label class="consent-settings__option">
+        <input type="checkbox" id="consent-media">
+        Embedded media (YouTube video)
+      </label>
+      <label class="consent-settings__option">
+        <input type="checkbox" id="consent-support">
+        Support widget (Zendesk)
+      </label>
+    </form>
+    <div class="consent-settings__actions">
+      <button type="button" class="btn-primary" id="consent-save">Save</button>
+      <button type="button" class="btn-secondary" id="consent-close">Close</button>
+    </div>
+    <p class="consent-settings__fineprint">
+      See Project VIC's privacy policy:
+      <a href="https://cdn.prod.website-files.com/603bd9850e8442d1efe81a47/68ddbbe394bc78131cc20399_Project_VIC_International_Privacy_Policy_01_Oct_2025.pdf" target="_blank" rel="noopener noreferrer">Privacy Policy (PDF)</a>.
+    </p>
+  </div>
+</div>
 
