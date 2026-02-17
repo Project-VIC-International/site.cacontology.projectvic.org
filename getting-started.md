@@ -8,11 +8,28 @@ permalink: /getting-started
 
 Welcome to the CAC (Crimes Against Children) Ontology Family! This guide will help you get started with using the ontology in your investigations and applications.
 
+## Choose your path
+
+- **I want a plain-language overview**: Start with Key Concepts and the “Plain language” section below.
+- **I want to model a document with AI**: Start with [Model Documents with AI]({{ '/developers/ai-modeling' | relative_url }}).
+- **I want to integrate CAC into a system**: Start with the [Developer Guide]({{ '/developers' | relative_url }}).
+
 ## What is CAC Ontology?
 
 The CAC Ontology Family is a comprehensive semantic framework for modeling child exploitation investigations, operations, legal processes, reporting, offender tradecraft, and digital forensics activities. It extends the **Unified Cyber Ontology (UCO)** and the **Cyber-investigation Analysis Standard Expression (CASE) Ontology**, providing specialized modules for crimes against children investigations.
 
 The CAC Ontology is shepherded by **Project VIC International**, but further development of this initiative is open to any participant. The ontology represents concepts used globally by government and law enforcement agencies, NGOs, academic organizations, and commercial industry, and we plan to continue evolving this family of ontologies to represent new victim-centric language as it develops worldwide.
+
+## Plain language (what the files mean)
+
+- **RDF graph**: a way to represent facts as a connected set of nodes and links.
+- **Turtle (`.ttl`)**: a human-readable way to write RDF graphs.
+- **SPARQL (`.rq`)**: a query language for asking questions of a graph.
+- **SHACL**: validation rules that check whether a graph follows the intended structure and “business rules.”
+
+CAC Ontology is also part of the Linux Foundation Cyber Domain Ontology (CDO) ecosystem, which provides a shared foundation (UCO + CASE) so different tools and organizations can exchange investigation information consistently:
+
+- https://cyberdomainontology.org/
 
 ## Key Concepts
 
@@ -120,6 +137,14 @@ docker compose -f testing/docker-compose.yaml up -d
 4. **Access Resources**: Browse [Resources]({{ '/resources' | relative_url }}) for downloads, publications, and reference materials.
 
 5. **For Developers**: Check out the [Developer Guide]({{ '/developers' | relative_url }}) for detailed instructions on adoption, mapping, and integration.
+
+## Model a document with AI (recommended starting point)
+
+If your starting point is a press release, report, or tool export (instead of a pre-structured database), the fastest way to begin is the AI-assisted modeling workflow:
+
+- Guide: [Model Documents with AI]({{ '/developers/ai-modeling' | relative_url }})
+- Canonical prompt used by the workflow: https://github.com/Project-VIC-International/CAC-Ontology/blob/main/agent.md
+- Latest ontology changes and example suites: https://github.com/Project-VIC-International/CAC-Ontology/blob/main/CHANGELOG.md
 
 ## Integration with CASE and UCO
 

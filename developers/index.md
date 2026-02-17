@@ -8,6 +8,11 @@ permalink: /developers
 
 Welcome to the CAC Ontology Developer Guide. This documentation is designed for software engineers, data architects, and system integrators who are implementing the CAC Ontology in their applications and workflows.
 
+## Choose your path
+
+- **Model documents with AI**: Start from a document (press release, report, policy memo, tool export) and produce `.ttl` + `.rq` with an evidence trail. See [Model Documents with AI]({{ '/developers/ai-modeling' | relative_url }}).
+- **Map existing structured data**: You already have a database, schema, or JSON model and want to map it into CAC Ontology classes/properties.
+
 ## Adoption & Mapping
 
 Adopting the CAC Ontology involves mapping your existing data models and schemas to the semantic concepts defined in the ontology. This process ensures your data is interoperable with other systems using CAC, CASE, and UCO.
@@ -29,7 +34,7 @@ All CAC Ontology modules utilize a standardized namespace structure. When genera
 
 1.  **Analyze Source Data**: Identify the key entities in your data (e.g., Reports, Suspects, Victims, Digital Media).
 2.  **Generate UUIDs**: Assign a unique UUID v4 to every serialized object to ensure global uniqueness and alignment with CASE/UCO standards.
-3.  **Select Ontology Classes**: Map your entities to the corresponding CAC Ontology classes. Refer to the [Entity Reference](https://cacontology.projectvic.org/entities-az.html) and [Documentation](https://github.com/Project-VIC-International/CAC-Ontology/tree/v2.2.0/docs).
+3.  **Select Ontology Classes**: Map your entities to the corresponding CAC Ontology classes. Refer to the [Entity Reference](https://cacontology.projectvic.org/entities-az.html) and the repository docs: https://github.com/Project-VIC-International/CAC-Ontology/tree/main/docs
 4.  **Map Properties**: Align your data fields with the ontology's object and data properties.
 5.  **Define Relationships**: Establish links between entities using object properties (e.g., `cacontology-core:hasSuspect`, `cacontology-core:hasVictim`).
 
@@ -82,79 +87,17 @@ You can validate your data using the provided Docker configuration. This system 
 We provide extensive resources to assist with implementation:
 
 ### Example Knowledge Graphs
-Review our collection of [Example Knowledge Graphs]({{ '/examples' | relative_url }}) to see complete, valid RDF datasets for various scenarios:
+Review the [Examples & Gallery]({{ '/examples' | relative_url }}) for curated entry points, or browse the canonical example suite in GitHub:
 
-<details>
-<summary>Click to view all Knowledge Graph Examples</summary>
-<ul>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/764-network-extremist-enterprise-example.ttl' | relative_url }}" target="_blank">764-network-extremist-enterprise-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/arkansas-operation-cyber-highway-safety-check-example.ttl' | relative_url }}" target="_blank">arkansas-operation-cyber-highway-safety-check-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/brooklyn-fiesco-november-2024-example.ttl' | relative_url }}" target="_blank">brooklyn-fiesco-november-2024-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/brooklyn-lee-december-2024-example.ttl' | relative_url }}" target="_blank">brooklyn-lee-december-2024-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/brooklyn-morton-october-2024-example.ttl' | relative_url }}" target="_blank">brooklyn-morton-october-2024-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/brooklyn-teacher-march-2025-example.ttl' | relative_url }}" target="_blank">brooklyn-teacher-march-2025-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/brooklyn-trafficking-april-2025-example.ttl' | relative_url }}" target="_blank">brooklyn-trafficking-april-2025-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/brooklyn-trafficking-ring-example.ttl' | relative_url }}" target="_blank">brooklyn-trafficking-ring-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/buffalo-vermont-case-example.ttl' | relative_url }}" target="_blank">buffalo-vermont-case-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/bushwick-case-example.ttl' | relative_url }}" target="_blank">bushwick-case-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/ceos-federal-law-example.ttl' | relative_url }}" target="_blank">ceos-federal-law-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/douglas-comprehensive-case.ttl' | relative_url }}" target="_blank">douglas-comprehensive-case.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/enhanced-investigation-lifecycle.ttl' | relative_url }}" target="_blank">enhanced-investigation-lifecycle.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/europol-kidflix-operation-example.ttl' | relative_url }}" target="_blank">europol-kidflix-operation-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/gary-simon-teacher-case-example.ttl' | relative_url }}" target="_blank">gary-simon-teacher-case-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/gufo-phase1-example.ttl' | relative_url }}" target="_blank">gufo-phase1-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/gufo-phase2-temporal-example.ttl' | relative_url }}" target="_blank">gufo-phase2-temporal-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/haitian-orphanage-geilenfeld-example.ttl' | relative_url }}" target="_blank">haitian-orphanage-geilenfeld-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/hartford-vermont-case-example.ttl' | relative_url }}" target="_blank">hartford-vermont-case-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/hotline-lifecycle.ttl' | relative_url }}" target="_blank">hotline-lifecycle.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/idaho-operation-unhinged-example.ttl' | relative_url }}" target="_blank">idaho-operation-unhinged-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/illinois-attorney-general-case-example.ttl' | relative_url }}" target="_blank">illinois-attorney-general-case-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/international-coordination-example.ttl' | relative_url }}" target="_blank">international-coordination-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/investigation-lifecycle.ttl' | relative_url }}" target="_blank">investigation-lifecycle.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/national-icac-directory-example.ttl' | relative_url }}" target="_blank">national-icac-directory-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/operation-cumberland-ai-csam-example.ttl' | relative_url }}" target="_blank">operation-cumberland-ai-csam-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/operation-restore-justice-example.ttl' | relative_url }}" target="_blank">operation-restore-justice-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/palmisano-louisiana-registered-offender-example.ttl' | relative_url }}" target="_blank">palmisano-louisiana-registered-offender-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/rhode-island-production-case.ttl' | relative_url }}" target="_blank">rhode-island-production-case.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/sa-jacet-decade-operation-example.ttl' | relative_url }}" target="_blank">sa-jacet-decade-operation-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/sex-offender-registry-integration-example.ttl' | relative_url }}" target="_blank">sex-offender-registry-integration-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/utah-dominic-christensen-example.ttl' | relative_url }}" target="_blank">utah-dominic-christensen-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/utah-operation-hive-strike-example.ttl' | relative_url }}" target="_blank">utah-operation-hive-strike-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/valdez-olivar-maryland-case-example.ttl' | relative_url }}" target="_blank">valdez-olivar-maryland-case-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/vermont-case-example.ttl' | relative_url }}" target="_blank">vermont-case-example.ttl</a></li>
-  <li><a href="{{ '/examples/examples_knowledge_graphs/wa-sextortion-case-example.ttl' | relative_url }}" target="_blank">wa-sextortion-case-example.ttl</a></li>
-</ul>
-</details>
-
-Found in the repository under [`examples/examples_knowledge_graphs`](https://github.com/Project-VIC-International/CAC-Ontology/tree/main/examples/examples_knowledge_graphs).
+- Example knowledge graphs (canonical): https://github.com/Project-VIC-International/CAC-Ontology/tree/main/examples_knowledge_graphs
 
 ### SPARQL Queries
-Explore [Example SPARQL Queries]({{ '/examples' | relative_url }}#sparql-query-examples) for analytics and data retrieval patterns:
+Browse the canonical SPARQL suites in GitHub:
 
-<details>
-<summary>Click to view all SPARQL Query Examples</summary>
-<ul>
-  <li><a href="{{ '/examples/example_SPARQL_queries/age-at-time-analytics.rq' | relative_url }}" target="_blank">age-at-time-analytics.rq</a></li>
-  <li><a href="{{ '/examples/example_SPARQL_queries/comprehensive-case-analytics.rq' | relative_url }}" target="_blank">comprehensive-case-analytics.rq</a></li>
-  <li><a href="{{ '/examples/example_SPARQL_queries/find_automated_reports.rq' | relative_url }}" target="_blank">find_automated_reports.rq</a></li>
-  <li><a href="{{ '/examples/example_SPARQL_queries/find_cross_border_actions.rq' | relative_url }}" target="_blank">find_cross_border_actions.rq</a></li>
-  <li><a href="{{ '/examples/example_SPARQL_queries/find_duplicate_evidence.rq' | relative_url }}" target="_blank">find_duplicate_evidence.rq</a></li>
-  <li><a href="{{ '/examples/example_SPARQL_queries/find_live_stream_incidents.rq' | relative_url }}" target="_blank">find_live_stream_incidents.rq</a></li>
-  <li><a href="{{ '/examples/example_SPARQL_queries/find_open_reports.rq' | relative_url }}" target="_blank">find_open_reports.rq</a></li>
-  <li><a href="{{ '/examples/example_SPARQL_queries/find_platform_cooperation_analytics.rq' | relative_url }}" target="_blank">find_platform_cooperation_analytics.rq</a></li>
-  <li><a href="{{ '/examples/example_SPARQL_queries/find_report_statistics.rq' | relative_url }}" target="_blank">find_report_statistics.rq</a></li>
-  <li><a href="{{ '/examples/example_SPARQL_queries/find_rescue_chains.rq' | relative_url }}" target="_blank">find_rescue_chains.rq</a></li>
-  <li><a href="{{ '/examples/example_SPARQL_queries/find_rescue_statistics.rq' | relative_url }}" target="_blank">find_rescue_statistics.rq</a></li>
-  <li><a href="{{ '/examples/example_SPARQL_queries/find_unhandled_reports.rq' | relative_url }}" target="_blank">find_unhandled_reports.rq</a></li>
-  <li><a href="{{ '/examples/example_SPARQL_queries/gufo-enhanced-analytics.rq' | relative_url }}" target="_blank">gufo-enhanced-analytics.rq</a></li>
-  <li><a href="{{ '/examples/example_SPARQL_queries/utah-dominic-christensen-analytics.rq' | relative_url }}" target="_blank">utah-dominic-christensen-analytics.rq</a></li>
-</ul>
-</details>
-
-Found in the repository under [`examples/example_SPARQL_queries`](https://github.com/Project-VIC-International/CAC-Ontology/tree/main/examples/example_SPARQL_queries).
+- SPARQL analytics suites (canonical): https://github.com/Project-VIC-International/CAC-Ontology/tree/main/example_SPARQL_queries
 
 ### Documentation
--   **[CAC Ontology v2.2.0 Documentation](https://github.com/Project-VIC-International/CAC-Ontology/tree/v2.2.0/docs)**: The official documentation source, including architecture, design, and user guides.
+- Repository documentation (canonical): https://github.com/Project-VIC-International/CAC-Ontology/tree/main/docs
 
 ## Contributing
 

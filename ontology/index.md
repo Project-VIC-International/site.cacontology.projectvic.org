@@ -16,6 +16,19 @@ The CAC Ontology Family consists of **30+ specialized modules** organized into s
 
 **Namespace**: `https://cacontology.projectvic.org`
 
+## Where the canonical ontology lives
+
+CAC Ontology evolves quickly. The canonical source of truth is the main GitHub repository:
+
+- Ontology modules (canonical): https://github.com/Project-VIC-International/CAC-Ontology/tree/main/ontology
+- SHACL shapes (canonical): https://github.com/Project-VIC-International/CAC-Ontology/tree/main/ontology
+
+## Built on the Linux Foundation Cyber Domain Ontology (CDO)
+
+CAC Ontology extends UCO and CASE, which are part of the Linux Foundation Cyber Domain Ontology ecosystem:
+
+- https://cyberdomainontology.org/
+
 ## Ontology Modules
 
 ### Core Framework (3 modules)
@@ -66,6 +79,16 @@ The CAC Ontology Family consists of **30+ specialized modules** organized into s
 
 - Comprehensive SHACL validation shapes for all major modules
 - Cross-reference validation and business rule enforcement
+
+## What’s new in recent releases (2.3 - 2.10)
+
+Recent releases added or expanded modeling in areas such as:
+
+- Missing child rescue operations and emergency disclosure requests
+- Undercover operations and suspect communication patterns
+- Detection-to-action operations and analyst wellbeing considerations
+- Legal/sentencing expansions including appellate concepts
+- USA legislative and legal harmonization extensions
 
 ## Namespace and Prefixes
 
