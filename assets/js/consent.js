@@ -243,11 +243,23 @@
             "Could not save privacy settings in this browser. Your choices will apply for this visit, but may reset when you close the browser.",
             true
           );
-          // Keep modal open so the user sees the message.
-          return;
+          // Don't return early; let the modal close so the user isn't stuck.
+        } else {
+          setStatus("Saved.", false);
         }
 
-        setStatus("Saved.", false);
+        // Give the user a moment to see the status if it was an error, or just close immediately?
+        // Standard behavior: close immediately on save. If error, maybe we should keep it open?
+        // But the user complained "I can't save... and close". So we MUST close.
+        // If they want to see the error, they might miss it if we close too fast.
+        // Compromise: If error, maybe alert? Or just close.
+        // The user said "I can't save... and close". So closing is the priority.
+        // We will close the modal. The status message might be seen briefly or not.
+        // Actually, if we close, the status message is hidden.
+        // If we want them to see the error, we should probably use alert() as a fallback if we close.
+        // But alerts are annoying.
+        // Let's just close it. The settings ARE applied for the session. That's what matters most.
+        
         closeSettings();
         hideBanner();
       });

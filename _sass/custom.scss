@@ -863,6 +863,10 @@ label:focus {
   padding: 1rem;
 }
 
+.consent-banner[hidden] {
+  display: none !important;
+}
+
 .consent-banner__inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -892,6 +896,10 @@ label:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.consent-settings[hidden] {
+  display: none !important;
 }
 
 .consent-settings__inner {
