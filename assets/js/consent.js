@@ -114,7 +114,18 @@
     var s = document.createElement("script");
     s.id = "ze-snippet";
     s.type = "text/javascript";
-    s.src = ZENDESK_SNIPPET_SRC;
+    // Provide the recommended zE queue stub for cases where the snippet is
+    // injected dynamically. The Zendesk loader uses `window.zE.s` as a fallback
+    // to locate its own script element and read the `key` param.
+    window.zE =
+      window.zE ||
+      function () {
+        (window.zE.q = window.zE.q || []).push(arguments);
+      };
+    window.zE.s = s;
+
+    // Use setAttribute to ensure the URL (incl. query params) is preserved.
+    s.setAttribute("src", ZENDESK_SNIPPET_SRC);
     s.addEventListener("load", function () {
       // Some configurations keep the launcher hidden unless explicitly shown.
       try {
