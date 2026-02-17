@@ -9,6 +9,8 @@
   var GA_MEASUREMENT_ID = "G-SFJ8Y5E56M";
   var ZENDESK_SNIPPET_SRC =
     "https://static.zdassets.com/ekr/snippet.js?key=0de064eb-1892-4a0e-8ff9-bd8c3a3f49d8";
+  // In-memory fallback when persistent storage is unavailable.
+  var memoryConsent = null;
 
   function safeJsonParse(str) {
     try {
@@ -18,16 +20,35 @@
     }
   }
 
+  function setStatus(message, isError) {
+    var el = document.getElementById("consent-status");
+    if (!el) return;
+    el.textContent = message || "";
+    el.setAttribute("data-level", isError ? "error" : "info");
+  }
+
   function getConsent() {
-    var raw = localStorage.getItem(STORAGE_KEY);
-    var parsed = raw ? safeJsonParse(raw) : null;
-    if (!parsed) return null;
-    return {
-      analytics: !!parsed.analytics,
-      media: !!parsed.media,
-      support: !!parsed.support,
-      updatedAt: parsed.updatedAt || null,
-    };
+    // Prefer persistent storage when available.
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      var parsed = raw ? safeJsonParse(raw) : null;
+      if (!parsed) return null;
+      return {
+        analytics: !!parsed.analytics,
+        media: !!parsed.media,
+        support: !!parsed.support,
+        updatedAt: parsed.updatedAt || null,
+      };
+    } catch (e) {
+      // localStorage may be blocked (e.g., private browsing / strict settings).
+      if (!memoryConsent) return null;
+      return {
+        analytics: !!memoryConsent.analytics,
+        media: !!memoryConsent.media,
+        support: !!memoryConsent.support,
+        updatedAt: memoryConsent.updatedAt || null,
+      };
+    }
   }
 
   function setConsent(consent) {
@@ -37,7 +58,14 @@
       support: !!consent.support,
       updatedAt: new Date().toISOString(),
     };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    // Best effort persist; fall back to memory if blocked.
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    } catch (e) {
+      memoryConsent = payload;
+      // Let caller decide how to message the user.
+      payload._persistenceFailed = true;
+    }
     return payload;
   }
 
@@ -131,6 +159,7 @@
     var modal = document.getElementById("consent-settings");
     if (!modal) return;
     modal.hidden = false;
+    setStatus("", false);
     var first = modal.querySelector("button, input, a");
     if (first) first.focus();
   }
@@ -206,9 +235,33 @@
           media: m ? m.checked : false,
           support: s ? s.checked : false,
         });
+        // Always apply choices immediately for this page.
+        applyConsent(c);
+
+        if (c && c._persistenceFailed) {
+          setStatus(
+            "Could not save privacy settings in this browser. Your choices will apply for this visit, but may reset when you close the browser.",
+            true
+          );
+          // Don't return early; let the modal close so the user isn't stuck.
+        } else {
+          setStatus("Saved.", false);
+        }
+
+        // Give the user a moment to see the status if it was an error, or just close immediately?
+        // Standard behavior: close immediately on save. If error, maybe we should keep it open?
+        // But the user complained "I can't save... and close". So we MUST close.
+        // If they want to see the error, they might miss it if we close too fast.
+        // Compromise: If error, maybe alert? Or just close.
+        // The user said "I can't save... and close". So closing is the priority.
+        // We will close the modal. The status message might be seen briefly or not.
+        // Actually, if we close, the status message is hidden.
+        // If we want them to see the error, we should probably use alert() as a fallback if we close.
+        // But alerts are annoying.
+        // Let's just close it. The settings ARE applied for the session. That's what matters most.
+        
         closeSettings();
         hideBanner();
-        applyConsent(c);
       });
     }
 
