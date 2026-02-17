@@ -107,7 +107,21 @@
     };
     // Zendesk's loader expects the script tag id to be "ze-snippet" so it can
     // locate itself and extract the `key` query param.
-    injectScriptOnce("ze-snippet", ZENDESK_SNIPPET_SRC);
+    //
+    // Use a plain script tag appended to <body> (no async) to closely match the
+    // standard Zendesk embed pattern and avoid loader edge-cases.
+    if (document.getElementById("ze-snippet")) return;
+    var s = document.createElement("script");
+    s.id = "ze-snippet";
+    s.type = "text/javascript";
+    s.src = ZENDESK_SNIPPET_SRC;
+    s.addEventListener("load", function () {
+      // Some configurations keep the launcher hidden unless explicitly shown.
+      try {
+        if (window.zE) window.zE("webWidget", "show");
+      } catch (e) {}
+    });
+    (document.body || document.head).appendChild(s);
   }
 
   function renderYouTubeEmbeds() {
