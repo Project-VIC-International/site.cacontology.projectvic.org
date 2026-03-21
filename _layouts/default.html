@@ -23,16 +23,37 @@
     {%- include footer.html -%}
     
     <script>
-      // Enhance navigation accessibility with aria-expanded state
       (function() {
-        var navTrigger = document.getElementById('nav-trigger');
-        if (navTrigger) {
-          navTrigger.addEventListener('change', function() {
-            this.setAttribute('aria-expanded', this.checked ? 'true' : 'false');
-          });
-          // Set initial state
-          navTrigger.setAttribute('aria-expanded', navTrigger.checked ? 'true' : 'false');
+        var nav = document.getElementById('site-navigation');
+        var trigger = document.getElementById('nav-trigger');
+        var menu = document.getElementById('site-nav-menu');
+        if (!trigger || !menu) return;
+
+        function closeMenu() {
+          trigger.checked = false;
+          syncAria();
         }
+
+        function syncAria() {
+          var open = trigger.checked;
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+
+        trigger.addEventListener('change', syncAria);
+        syncAria();
+
+        document.addEventListener('click', function(e) {
+          if (!trigger.checked) return;
+          if (nav && !nav.contains(e.target)) closeMenu();
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && trigger.checked) closeMenu();
+        });
+
+        menu.querySelectorAll('.page-link').forEach(function(link) {
+          link.addEventListener('click', closeMenu);
+        });
       })();
     </script>
     <script src="{{ '/assets/js/consent.js' | relative_url }}" defer></script>
