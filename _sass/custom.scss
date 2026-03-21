@@ -48,6 +48,8 @@ $desktop-min: 1025px;
 .site-header {
   background-color: $pv-primary;
   border-bottom: 3px solid $pv-secondary;
+  position: relative;
+  z-index: 200;
   
   .site-title {
     color: white;
@@ -68,7 +70,6 @@ $desktop-min: 1025px;
       }
     }
     
-    // Ensure navigation menu is accessible on all devices
     .nav-trigger {
       position: absolute;
       clip: rect(0, 0, 0, 0);
@@ -92,37 +93,14 @@ $desktop-min: 1025px;
     }
     
     .trigger {
-      clear: both;
       display: none;
-      
-      .page-link {
-        display: block !important;
-        padding: 0.75rem 1rem;
-        text-align: left;
-        color: rgba(255, 255, 255, 0.9) !important;
-        min-height: 44px;
-        width: 100%;
-        line-height: 1.5;
-        
-        &:hover {
-          color: white !important;
-          text-decoration: underline;
-        }
-        
-        &:focus {
-          background-color: rgba(255, 255, 255, 0.1);
-          color: white !important;
-        }
-      }
     }
     
     .nav-trigger:checked ~ .trigger {
       display: block;
-      padding-bottom: 0.5rem;
     }
   }
   
-  // Header donate button styling
   .btn-donate {
     margin-left: 1rem;
     white-space: nowrap;
@@ -526,16 +504,14 @@ label:focus {
 
 // Mobile First - Base styles for mobile (< 768px)
 @media screen and (max-width: $mobile-max) {
-  // Add flexbox to header wrapper for better alignment on mobile
   .site-header .wrapper {
     display: flex;
     align-items: center;
-    position: relative; // Positioning context for the nav menu
-    gap: 1rem; // Add space between nav and donate button
+    gap: 1rem;
   }
 
-  // Ensure mobile navigation menu links are visible
   .site-header .site-nav {
+    position: static;
     margin-left: auto;
 
     .nav-trigger + label {
@@ -544,28 +520,30 @@ label:focus {
     }
 
     .trigger {
-      position: absolute;
-      top: 100%; // Position below the header
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;
-      z-index: 100;
+      position: fixed;
+      top: auto;
+      left: 0;
+      right: 0;
+      z-index: 300;
       background-color: $pv-primary;
-      margin-top: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      border-bottom: 3px solid $pv-secondary;
+      padding: 0.5rem 0;
+
       .page-link {
         display: block !important;
+        padding: 0.75rem 1.5rem;
         color: rgba(255, 255, 255, 0.9) !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        width: 100%;
         min-height: 44px;
         line-height: 1.5;
         text-decoration: none;
         font-weight: 500;
+        margin: 0;
         
         &:hover {
           color: white !important;
           text-decoration: underline;
+          background-color: rgba(255, 255, 255, 0.1);
         }
         
         &:focus {
@@ -576,14 +554,8 @@ label:focus {
         }
       }
     }
-    
-    .nav-trigger:checked ~ .trigger {
-      display: block !important;
-      visibility: visible !important;
-    }
   }
 
-  // Avoid any horizontal overflow on small screens
   html, body {
     overflow-x: hidden;
   }
@@ -677,34 +649,6 @@ label:focus {
   
   .page-content {
     padding: 0.75rem;
-  }
-  
-  // Ensure navigation menu links are visible in portrait mode
-  .site-header .site-nav {
-    .trigger {
-      .page-link {
-        display: block !important;
-        color: rgba(255, 255, 255, 0.9) !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        width: 100%;
-        padding: 1rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        text-decoration: none;
-        
-        &:hover,
-        &:focus {
-          color: white !important;
-          background-color: rgba(255, 255, 255, 0.15);
-        }
-      }
-    }
-    
-    .nav-trigger:checked ~ .trigger {
-      display: block !important;
-      visibility: visible !important;
-    }
   }
 }
 
