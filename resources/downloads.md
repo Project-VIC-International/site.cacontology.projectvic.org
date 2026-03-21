@@ -20,7 +20,14 @@ git clone https://github.com/Project-VIC-International/CAC-Ontology.git
 
 ### Ontology Modules
 
-Ontology files are located in the `ontology/` directory:
+Ontology files are located in the `ontology/` directory (97 files total, 2,154 classes, 2,443 properties):
+
+#### Semantic Spine & Bridges (v3.0.0)
+- `cacontology-core-spine.ttl` - Top-level class hierarchy
+- `cacontology-core-spine-shapes.ttl` - Spine SHACL shapes
+- `cacontology-bridge-gufo.ttl` - gUFO alignment bridge
+- `cacontology-bridge-case.ttl` - CASE alignment bridge
+- `cacontology-bridge-uco.ttl` - UCO alignment bridge
 
 #### Core Framework
 - `cacontology-core.ttl`
@@ -32,14 +39,14 @@ Ontology files are located in the `ontology/` directory:
 - `cacontology-production.ttl`
 - `cacontology-grooming.ttl`
 - `cacontology-forensics.ttl`
-- And 20+ additional modules
+- And 25+ additional modules
 
 #### Validation Modules
-- `cacontology-*-shapes.ttl` - SHACL validation shapes for each module
+- `cacontology-*-shapes.ttl` - 30 SHACL validation shapes modules
 
 ### Example Files
 
-30+ example files are available in the `examples/` directory:
+56 example knowledge graphs are available in the `examples_knowledge_graphs/` directory, with 28 SPARQL analytics suites:
 
 - Real-world investigation examples
 - Use case demonstrations

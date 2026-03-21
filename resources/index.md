@@ -36,7 +36,7 @@ The [GitHub repository](https://github.com/Project-VIC-International/CAC-Ontolog
 
 ## Examples and Tutorials
 
-- **[Examples Gallery]({{ '/examples' | relative_url }})** - 30+ real-world examples
+- **[Examples Gallery]({{ '/examples' | relative_url }})** - 56 real-world example knowledge graphs
 - **SPARQL Queries** - Example queries in `example_SPARQL_queries/` directory
 - **Analytics Demonstrations** - Located in `analytics_demonstration/` directory
 

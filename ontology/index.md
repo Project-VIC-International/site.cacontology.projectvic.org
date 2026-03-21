@@ -12,9 +12,10 @@ The CAC (Crimes Against Children) Ontology Family provides a comprehensive seman
 
 ## Overview
 
-The CAC Ontology Family consists of **30+ specialized modules** organized into six domain areas, enhanced with comprehensive gUFO (Unified Foundational Ontology) integration for improved semantic precision, temporal modeling, and validation capabilities.
+The CAC Ontology Family consists of **35+ specialized modules** organized into six domain areas plus a core semantic spine and bridge layer, enhanced with comprehensive gUFO (Unified Foundational Ontology) integration for improved semantic precision, temporal modeling, and validation capabilities. **v3.0.0** introduces the **Semantic Spine** (`cac-core:` namespace) — a stable, top-level class hierarchy that mediates all alignment to gUFO, UCO, and CASE, giving domain modules a single, predictable anchoring layer.
 
 **Namespace**: `https://cacontology.projectvic.org`
+**Spine Namespace**: `https://cacontology.projectvic.org/core#` (prefix `cac-core:`)
 
 ## Where the canonical ontology lives
 
@@ -30,6 +31,14 @@ CAC Ontology extends UCO and CASE, which are part of the Linux Foundation Cyber 
 - https://cyberdomainontology.org/
 
 ## Ontology Modules
+
+### Semantic Spine & Bridges (5 modules)
+
+- **`cacontology-core-spine.ttl`** - Top-level class hierarchy (`cac-core:Entity`, `EnduringEntity`, `Event`, `Situation`, `Role`, `Phase` and branches)
+- **`cacontology-core-spine-shapes.ttl`** - SHACL shapes validating spine class constraints
+- **`cacontology-bridge-gufo.ttl`** - Bridge to gUFO foundational ontology
+- **`cacontology-bridge-case.ttl`** - Bridge to CASE investigation ontology
+- **`cacontology-bridge-uco.ttl`** - Bridge to Unified Cyber Ontology
 
 ### Core Framework (3 modules)
 
@@ -71,42 +80,64 @@ CAC Ontology extends UCO and CASE, which are part of the Linux Foundation Cyber 
 
 - **`cacontology-victim-impact.ttl`** - Victim impact assessment & recovery
 - **`cacontology-taskforce.ttl`** - CAC task force organization
-- **`cacontology-sentencing.ttl`** - Legal outcomes & sentencing
+- **`cacontology-legal-outcomes.ttl`** - Legal outcomes & sentencing
 - **`cacontology-specialized-units.ttl`** - Specialized units & advanced capabilities
 - **`cacontology-sex-offender-registry.ttl`** - Sex offender registry management
 
-### Validation Components (20+ modules)
+### Validation Components (30 modules)
 
-- Comprehensive SHACL validation shapes for all major modules
+- Comprehensive SHACL validation shapes for all major modules, including spine shapes
 - Cross-reference validation and business rule enforcement
+- SPARQL-based constraints for advanced validation
 
-## What’s new in recent releases (2.3 - 2.10)
+## What's new in v3.0.0
 
-Recent releases added or expanded modeling in areas such as:
+v3.0.0 is a **major architectural release** that introduces:
 
-- Missing child rescue operations and emergency disclosure requests
-- Undercover operations and suspect communication patterns
-- Detection-to-action operations and analyst wellbeing considerations
-- Legal/sentencing expansions including appellate concepts
-- USA legislative and legal harmonization extensions
+- **Semantic Spine** (`cac-core:` namespace): A stable, top-level class hierarchy with 7 foundational abstract classes that all domain modules anchor to
+- **Bridge modules**: Dedicated `bridge-gufo`, `bridge-case`, and `bridge-uco` modules for external ontology alignment via `skos:exactMatch`
+- **Module renaming for clarity**: `ai-generated-content` → `ai-csam`, `soe` → `sadistic-online-exploitation`, `sentencing` → `legal-outcomes`
+- **Temporal lifecycle module** with investigation phase modeling
+- **56 example knowledge graphs** and **28 SPARQL query files**
+- Corrected subclass hierarchies across all domain modules
+
+### Recent releases (2.10 - 2.12)
+
+- **v2.12.0**: Victim Recantation module — statement lifecycle, risk factors, coercive pressure, and post-recantation response
+- **v2.11.0**: Knowledge Synthesis module — report/artifact modeling with audit-safe evidence alignment
+- **v2.10.0**: Emergency Disclosure Requests for missing-child investigations
 
 ## Namespace and Prefixes
 
 All ontology modules use the standardized namespace structure:
 
 - **Base Namespace**: `https://cacontology.projectvic.org`
+- **Spine Namespace**: `https://cacontology.projectvic.org/core#` (prefix `cac-core:`)
 - **Module Namespaces**: `https://cacontology.projectvic.org/{module-name}#`
 - **Prefix Pattern**: `cacontology-{module-name}:`
 
 ### Example Usage
 
 ```turtle
+@prefix cac-core: <https://cacontology.projectvic.org/core#> .
 @prefix cacontology: <https://cacontology.projectvic.org#> .
 @prefix cacontology-core: <https://cacontology.projectvic.org/core#> .
 @prefix cacontology-taskforce: <https://cacontology.projectvic.org/taskforce#> .
+
+# Example: Create a CAC investigation with spine-anchored classes
+:investigation-001 a cacontology:CACInvestigation ;
+    cacontology:hasReport :report-001 ;
+    cacontology:status "active" .
+
+# Phases, Roles, Events inherit spine types through the class hierarchy
+:phase-001 a cacontology:InitialPhase ;      # inherits cac-core:Phase
+    rdfs:label "Cybertip Triage" .
+
+:action-001 a cacontology:ReceiveCybertipAction ;  # inherits cac-core:InvestigativeAction
+    rdfs:label "Process incoming NCMEC CyberTip" .
 ```
 
-## Integration with CASE and UCO
+## Integration with CASE, UCO, and gUFO
 
 CAC Ontology extends and integrates with:
 
@@ -114,7 +145,7 @@ CAC Ontology extends and integrates with:
 - **UCO**: Unified Cyber Ontology
 - **gUFO**: Unified Foundational Ontology
 
-This integration ensures compatibility with existing cyber investigation tools and workflows while providing specialized capabilities for crimes against children investigations.
+In v3.0.0, all alignment to these external ontologies is mediated through the **Semantic Spine** and **Bridge modules**, giving domain modules a single, predictable anchoring layer rather than direct cross-ontology subclassing.
 
 ## Documentation Resources
 
@@ -137,4 +168,3 @@ Additional documentation is available in the [GitHub repository](https://github.
 - [Getting Started](/getting-started) - Introduction and quick start guide
 - [Examples](/examples) - Real-world examples and use cases
 - [Resources](/resources) - Downloads and reference materials
-

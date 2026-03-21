@@ -53,8 +53,13 @@ theme: minima
 
 # Custom variables
 cac_ontology:
+  version: "3.0.0"
   namespace: "https://cacontology.projectvic.org"
-  extends: ["CASE", "UCO"]
-  modules: 30
+  spine_namespace: "https://cacontology.projectvic.org/core#"
+  extends: ["CASE", "UCO", "gUFO"]
+  modules: 35
   domain_areas: 6
+  ontology_count: 97
+  classes: 2154
+  properties: 2443
 

@@ -25,6 +25,7 @@ All CAC Ontology modules utilize a standardized namespace structure. When genera
 
 | Prefix | URI | Description |
 |--------|-----|-------------|
+| `cac-core` | `https://cacontology.projectvic.org/core#` | Semantic Spine (v3.0.0) |
 | `cacontology` | `https://cacontology.projectvic.org#` | Base namespace |
 | `cacontology-core` | `https://cacontology.projectvic.org/core#` | Core investigation framework |
 | `uco-core` | `https://ontology.unifiedcyberontology.org/uco/core/` | UCO Core |
@@ -43,7 +44,7 @@ All CAC Ontology modules utilize a standardized namespace structure. When genera
 The CAC Ontology is designed for seamless integration with the broader cyber-investigation ecosystem.
 
 -   **CASE & UCO**: CAC Ontology extends the **Cyber-investigation Analysis Standard Expression (CASE)** and **Unified Cyber Ontology (UCO)**. It inherits classes and properties from these standards, allowing you to use CAC-specific concepts alongside standard cyber-investigation structures. This ensures compatibility with tools that support CASE/UCO.
--   **gUFO**: The ontology integrates the **Unified Foundational Ontology (gUFO)** to provide a rigorous metaphysical foundation. This enhances temporal modeling (e.g., roles like 'Suspect' are temporal phases) and enables more robust validation and reasoning capabilities.
+-   **gUFO**: The ontology integrates the **Unified Foundational Ontology (gUFO)** to provide a rigorous metaphysical foundation. In v3.0.0, all gUFO alignment is mediated through the **Semantic Spine** (`cac-core:` namespace) and the `cacontology-bridge-gufo.ttl` bridge module, giving domain modules a single, predictable anchoring layer. This enhances temporal modeling (e.g., roles like 'Suspect' are temporal phases) and enables more robust validation and reasoning capabilities.
 
 ## Serialization
 
@@ -52,18 +53,22 @@ We recommend using **Turtle (.ttl)** or **JSON-LD** for serializing CAC Ontology
 **Example Turtle Serialization:**
 
 ```turtle
+@prefix cac-core: <https://cacontology.projectvic.org/core#> .
 @prefix cacontology: <https://cacontology.projectvic.org#> .
 @prefix cacontology-core: <https://cacontology.projectvic.org/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# Example: Create a CAC investigation using UUID v4
-:kb-f8e2c0b0-3b1a-4b9e-8c1d-9f2e3a4b5c6d a cacontology-core:CACInvestigation ;
-    cacontology-core:status "active" ;
-    cacontology-core:hasReport :kb-a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d .
+# Example: Create a CAC investigation with spine-anchored classes
+:kb-f8e2c0b0-3b1a-4b9e-8c1d-9f2e3a4b5c6d a cacontology:CACInvestigation ;
+    cacontology:status "active" ;
+    cacontology:hasReport :kb-a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d .
 
-:kb-a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d a cacontology-core:Report ;
-    cacontology-core:reportDate "2025-11-23"^^xsd:date ;
-    cacontology-core:summary "Initial tip received via hotline." .
+# Phases, Roles, Events inherit spine types through the class hierarchy
+:kb-c5d6e7f8-a1b2-4c3d-9e0f-1a2b3c4d5e6f a cacontology:InitialPhase ;  # inherits cac-core:Phase
+    rdfs:label "Cybertip Triage" .
+
+:kb-d7e8f9a0-b1c2-4d3e-af01-2b3c4d5e6f7a a cacontology:ReceiveCybertipAction ;  # inherits cac-core:InvestigativeAction
+    rdfs:label "Process incoming NCMEC CyberTip" .
 ```
 
 ## Validation

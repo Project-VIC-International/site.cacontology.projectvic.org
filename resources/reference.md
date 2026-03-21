@@ -37,12 +37,17 @@ Comprehensive documentation in the [GitHub repository](https://github.com/Projec
 ### Example Usage
 
 ```turtle
+@prefix cac-core: <https://cacontology.projectvic.org/core#> .
 @prefix cacontology: <https://cacontology.projectvic.org#> .
-@prefix cacontology-core: <https://cacontology.projectvic.org/core#> .
 
-:investigation-001 a cacontology-core:CACInvestigation ;
-    cacontology-core:hasReport :report-001 ;
-    cacontology-core:status "active" .
+# Classes and properties use the cacontology: prefix;
+# spine types (Entity, Event, Phase, Role, etc.) use cac-core:
+:investigation-001 a cacontology:CACInvestigation ;
+    cacontology:hasReport :report-001 ;
+    cacontology:status "active" .
+
+:phase-001 a cacontology:InitialPhase ;      # inherits cac-core:Phase
+    rdfs:label "Cybertip Triage" .
 ```
 
 ## Standards and Specifications

@@ -14,14 +14,59 @@ The latest stable release of CAC Ontology is available on GitHub:
 
 - Releases: https://github.com/Project-VIC-International/CAC-Ontology/releases
 
-### Latest: v2.10.0 (Feb 16, 2026)
+### Latest: v3.0.0 (Mar 21, 2026)
 
-v2.10.0 adds explicit modeling for **Emergency Disclosure Requests (EDRs)** used in time-sensitive missing-child investigations, plus a new example knowledge graph and SPARQL analytics suite.
+v3.0.0 is a **major architectural release** introducing the **Semantic Spine** — a three-layer architecture (`cac-core-spine` → `cac-core` → domain modules) with dedicated bridge modules for gUFO, UCO, and CASE alignment.
 
-- Release tag: https://github.com/Project-VIC-International/CAC-Ontology/releases/tag/v2.10.0
+- Release tag: https://github.com/Project-VIC-International/CAC-Ontology/releases/tag/v3.0.0
 - Changelog entry: https://github.com/Project-VIC-International/CAC-Ontology/blob/main/CHANGELOG.md
 
-Key deliverables introduced in the v2.10.0 release notes include:
+Key deliverables:
+
+- **Semantic Spine** (`cacontology-core-spine.ttl`): 7 foundational abstract classes (`Entity`, `EnduringEntity`, `Event`, `Situation`, `Role`, `Phase`, and branches) that provide a stable, top-level class hierarchy for the entire ontology family
+- **Bridge modules**: `cacontology-bridge-gufo.ttl`, `cacontology-bridge-case.ttl`, `cacontology-bridge-uco.ttl` for external ontology alignment via `skos:exactMatch`
+- **Module renaming for clarity**: `ai-generated-content` → `ai-csam`, `soe` → `sadistic-online-exploitation`, `sentencing` → `legal-outcomes`
+- **Temporal lifecycle module** with investigation phase modeling
+- **97 ontology modules** validated with SHACL shapes
+- **56 example knowledge graphs** covering real-world cases
+- **28 SPARQL query files**
+- **2,154 classes** and **2,443 properties** across all modules
+- All files updated to `owl:versionInfo "3.0.0"`
+
+### v2.12.0 (Mar 13, 2026)
+
+v2.12.0 adds a dedicated **Victim Recantation** module for modeling child-victim statement change dynamics, recantation risk factors, coercive pressure, and post-recantation investigative response.
+
+- Release tag: https://github.com/Project-VIC-International/CAC-Ontology/releases/tag/v2.12.0
+
+Key deliverables:
+
+- New module: `cacontology-recantation.ttl` — statement lifecycle vocabulary (`VictimStatement`, `DisclosureStatement`, `RecantationStatement`, etc.), context/risk vocabulary, and investigative response vocabulary
+- Extended modules: `cacontology-case-management.ttl` (accommodation and testimony-planning concepts), `cacontology-victim-impact.ttl` (support concepts), `cacontology-training.ttl` (recantation response training), `cacontology-custodial.ttl` (contact restriction)
+- New SHACL shapes: `cacontology-recantation-shapes.ttl`
+- New example KG: `coursing-justice-recantation-101-example.ttl`
+- New SPARQL suite: `coursing-justice-recantation-101-analytics.rq`
+
+### v2.11.0 (Feb 20, 2026)
+
+v2.11.0 adds the **Knowledge Synthesis** module and hardens the SR2026.1 TF-CSEA systematic review example knowledge graph with audit-safe evidence alignment.
+
+- Release tag: https://github.com/Project-VIC-International/CAC-Ontology/releases/tag/v2.11.0
+
+Key deliverables:
+
+- New module: `cacontology-synthesis.ttl` — report/work vs artifact split, evidence pointer conventions, hash semantics helpers
+- New SHACL shapes: `cacontology-synthesis-shapes.ttl` — evidence pointer validation (line-range or page-range), hash validation (UCO `HashFacet` or legacy inline)
+- New example KG: `ipie-sr2026-1-tf-csea-systematic-review-example.ttl`
+- New SPARQL suite: `ipie-sr2026-1-tf-csea-systematic-review-analytics.rq`
+
+### v2.10.0 (Feb 16, 2026)
+
+v2.10.0 adds explicit modeling for **Emergency Disclosure Requests (EDRs)** used in time-sensitive missing-child investigations.
+
+- Release tag: https://github.com/Project-VIC-International/CAC-Ontology/releases/tag/v2.10.0
+
+Key deliverables:
 
 - New/updated ontology concepts in the platforms module (`cacontology-platforms.ttl`)
 - Updated SHACL shapes for validation (`cacontology-platforms-shapes.ttl`)
@@ -38,12 +83,15 @@ For detailed version history and changelog, see the [CHANGELOG.md](https://githu
 
 ### Current Version
 
-The CAC Ontology Family follows semantic versioning principles. The current version includes:
+The CAC Ontology Family follows semantic versioning principles. The current version (v3.0.0) includes:
 
-- **30+ ontology modules** covering all major domain areas
-- **20+ SHACL validation modules** with comprehensive business rules
+- **35+ specialized ontology modules** organized into six domain areas plus a core semantic spine and bridge layer
+- **30 SHACL validation modules** with comprehensive business rules
+- **Semantic Spine** (`cac-core:` namespace) — stable, top-level class hierarchy mediating all alignment to gUFO, UCO, and CASE
+- **Bridge modules** for gUFO, CASE, and UCO alignment
 - **gUFO integration** for enhanced semantic precision
 - **Full CASE/UCO compatibility** for seamless integration
+- **97 ontology files** with 2,154 classes and 2,443 properties
 
 ### Release Types
 
