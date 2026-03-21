@@ -18,12 +18,14 @@ CAC Ontology follows [Semantic Versioning](https://semver.org/) principles:
 
 ## Current Version
 
-The current version of CAC Ontology includes:
+The current version (v3.0.0) of CAC Ontology includes:
 
-- 30+ ontology modules
-- 20+ SHACL validation modules
-- Full gUFO integration
-- CASE/UCO compatibility
+- 35+ specialized ontology modules (97 ontology files total)
+- 30 SHACL validation modules
+- Semantic Spine (`cac-core:` namespace) with bridge modules
+- Full gUFO integration mediated through spine and bridge layers
+- CASE/UCO compatibility via dedicated bridge modules
+- 2,154 classes and 2,443 properties
 
 ## Version History
 
@@ -63,9 +65,9 @@ Ontology files include version information in their metadata:
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://cacontology.projectvic.org/core> 
-    dcterms:version "1.0.0" ;
-    owl:versionInfo "1.0.0" .
+<https://cacontology.projectvic.org/core/3.0.0>
+    owl:versionIRI <https://cacontology.projectvic.org/core/3.0.0> ;
+    owl:versionInfo "3.0.0" .
 ```
 
 ## Support

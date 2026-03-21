@@ -16,7 +16,7 @@ Welcome to the CAC (Crimes Against Children) Ontology Family! This guide will he
 
 ## What is CAC Ontology?
 
-The CAC Ontology Family is a comprehensive semantic framework for modeling child exploitation investigations, operations, legal processes, reporting, offender tradecraft, and digital forensics activities. It extends the **Unified Cyber Ontology (UCO)** and the **Cyber-investigation Analysis Standard Expression (CASE) Ontology**, providing specialized modules for crimes against children investigations.
+The CAC Ontology Family is a comprehensive semantic framework for modeling child exploitation investigations, operations, legal processes, reporting, offender tradecraft, and digital forensics activities. It extends the **Unified Cyber Ontology (UCO)**, the **Cyber-investigation Analysis Standard Expression (CASE) Ontology**, and the lightweight version of the **Unified Foundational Ontology (gUFO)**. **v3.0.0** introduces the **Semantic Spine** (`cac-core:` namespace) — a stable, top-level class hierarchy that mediates all alignment to gUFO, UCO, and CASE, giving domain modules a single, predictable anchoring layer.
 
 The CAC Ontology is shepherded by **Project VIC International**, but further development of this initiative is open to any participant. The ontology represents concepts used globally by government and law enforcement agencies, NGOs, academic organizations, and commercial industry, and we plan to continue evolving this family of ontologies to represent new victim-centric language as it develops worldwide.
 
@@ -38,45 +38,51 @@ CAC Ontology is also part of the Linux Foundation Cyber Domain Ontology (CDO) ec
 All CAC Ontology modules use the standardized namespace structure:
 
 - **Base Namespace**: `https://cacontology.projectvic.org`
+- **Spine Namespace**: `https://cacontology.projectvic.org/core#` (prefix `cac-core:`)
 - **Module Namespaces**: `https://cacontology.projectvic.org/{module-name}#`
 - **Prefix Pattern**: `cacontology-{module-name}:`
 
 ### Ontology Structure
 
-The CAC Ontology Family consists of **30+ specialized modules** organized into six domain areas:
+The CAC Ontology Family consists of **35+ specialized modules** organized into six domain areas plus a core semantic spine and bridge layer:
 
-1. **Core Framework** (3 modules)
+1. **Semantic Spine & Bridges** (5 modules)
+   - Top-level class hierarchy (`cac-core:Entity`, `EnduringEntity`, `Event`, `Situation`, `Role`, `Phase`, and branches)
+   - SHACL shapes for spine constraints
+   - Bridge modules for gUFO, CASE, and UCO alignment
+
+2. **Core Framework** (3 modules)
    - Base investigation framework and lifecycles
    - Hotline operations and report management
    - Enhanced NCMEC integration
 
-2. **International Coordination & Global Frameworks** (4 modules)
+3. **International Coordination & Global Frameworks** (4 modules)
    - Global coordination & cross-border operations
    - Professional development & capacity building
    - Prevention programs & education
    - International legal framework
 
-3. **High-Priority Criminal Activities** (5+ modules)
+4. **High-Priority Criminal Activities** (5+ modules)
    - CSAM production operations
    - Custodial relationships & positions of trust
    - Online grooming & enticement
    - Sexual extortion incidents
    - Athletic coaching exploitation
 
-4. **Specialized Investigation** (5+ modules)
+5. **Specialized Investigation** (5+ modules)
    - Undercover operations
    - Physical evidence & procurement
    - Tactical law enforcement operations
    - Multi-jurisdictional operations
    - Stranger abduction patterns
 
-5. **Technical Support** (4+ modules)
+6. **Technical Support** (4+ modules)
    - Digital forensics
    - Content detection & classification
    - Technology platforms & service providers
    - Street-based recruitment patterns
 
-6. **Victim Services & Task Force Management** (5+ modules)
+7. **Victim Services & Task Force Management** (5+ modules)
    - Victim impact assessment & recovery
    - CAC task force organization
    - Legal outcomes & sentencing
@@ -103,18 +109,21 @@ The CAC Ontology Family consists of **30+ specialized modules** organized into s
 Here's a simple example of using CAC Ontology in Turtle format:
 
 ```turtle
+@prefix cac-core: <https://cacontology.projectvic.org/core#> .
 @prefix cacontology: <https://cacontology.projectvic.org#> .
 @prefix cacontology-core: <https://cacontology.projectvic.org/core#> .
 
-# Example: Create a CAC investigation
-:investigation-001 a cacontology-core:CACInvestigation ;
-    cacontology-core:hasReport :report-001 ;
-    cacontology-core:status "active" ;
-    cacontology-core:hasInvestigator :investigator-001 .
+# Example: Create a CAC investigation with spine-anchored classes
+:investigation-001 a cacontology:CACInvestigation ;
+    cacontology:hasReport :report-001 ;
+    cacontology:status "active" .
 
-:report-001 a cacontology-core:Report ;
-    cacontology-core:reportDate "2024-01-15"^^xsd:date ;
-    cacontology-core:reportType "tip" .
+# Phases, Roles, Events inherit spine types through the class hierarchy
+:phase-001 a cacontology:InitialPhase ;      # inherits cac-core:Phase
+    rdfs:label "Cybertip Triage" .
+
+:action-001 a cacontology:ReceiveCybertipAction ;  # inherits cac-core:InvestigativeAction
+    rdfs:label "Process incoming NCMEC CyberTip" .
 ```
 
 ### Validation

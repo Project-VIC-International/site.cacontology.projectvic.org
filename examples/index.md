@@ -57,13 +57,17 @@ To contribute new examples:
 Examples are provided in Turtle (TTL) format and follow the CAC Ontology namespace structure:
 
 ```turtle
+@prefix cac-core: <https://cacontology.projectvic.org/core#> .
 @prefix cacontology: <https://cacontology.projectvic.org#> .
 @prefix cacontology-core: <https://cacontology.projectvic.org/core#> .
 
-# Example investigation
-:investigation-001 a cacontology-core:CACInvestigation ;
-    cacontology-core:hasReport :report-001 ;
-    cacontology-core:status "active" .
+# Example investigation with spine-anchored classes
+:investigation-001 a cacontology:CACInvestigation ;
+    cacontology:hasReport :report-001 ;
+    cacontology:status "active" .
+
+:phase-001 a cacontology:InitialPhase ;      # inherits cac-core:Phase
+    rdfs:label "Cybertip Triage" .
 ```
 
 ## Validation

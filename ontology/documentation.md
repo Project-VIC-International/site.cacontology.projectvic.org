@@ -59,9 +59,9 @@ Each ontology module includes inline documentation in RDF/OWL format:
 
 ## Examples
 
-The repository includes 30+ real-world example files:
+The repository includes 56 real-world example knowledge graphs:
 
-- Located in the `examples/` directory
+- Located in the `examples_knowledge_graphs/` directory
 - Based on actual law enforcement cases
 - Demonstrating practical applications
 - See the [Examples Gallery](/examples) for more information
