@@ -59,9 +59,11 @@ $nav-mobile-max: 1099px;
   z-index: 200;
   
   .wrapper {
-    display: flex;
+    display: flex !important;
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem !important;
+    max-width: none !important;
+    box-sizing: border-box;
   }
   
   .site-title {
@@ -75,9 +77,9 @@ $nav-mobile-max: 1099px;
   }
   
   .btn-donate {
-    margin-left: auto;
     white-space: nowrap;
     flex-shrink: 0;
+    margin-left: 0.5rem;
   }
   
   .site-nav {
@@ -86,6 +88,12 @@ $nav-mobile-max: 1099px;
     position: static !important;
     border: none !important;
     background: none !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    text-align: left !important;
+    line-height: normal !important;
+    top: auto !important;
+    right: auto !important;
 
     .page-link {
       color: rgba(255, 255, 255, 0.9);
@@ -123,6 +131,9 @@ $nav-mobile-max: 1099px;
     padding: 10px;
     position: relative;
     z-index: 310;
+    background: transparent !important;
+    border: none !important;
+    float: none !important;
   }
 
   .hamburger-lines {
@@ -601,12 +612,15 @@ label:focus {
   }
 }
 
-// Mobile / narrow layout styles (< 768px)
-@media screen and (max-width: $mobile-max) {
+// Prevent horizontal overflow on narrow screens
+@media screen and (max-width: $nav-mobile-max) {
   html, body {
     overflow-x: hidden;
   }
-  
+}
+
+// Mobile / narrow layout styles (< 768px)
+@media screen and (max-width: $mobile-max) {
   .hero-section {
     padding: 2.5rem 1.5rem;
     margin-bottom: 2rem;
