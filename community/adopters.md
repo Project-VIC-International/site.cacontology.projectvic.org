@@ -6,11 +6,14 @@ permalink: /community/adopters
 
 # Adopters
 
-Organizations and agencies using CAC Ontology in their investigations and operations.
+## Project VIC International
 
-## Current Adopters
+Project VIC International is actively building tools on CAC Ontology and CASE/UCO:
 
-The CAC Ontology is being adopted by law enforcement agencies, hotline organizations, and research institutions worldwide. This page will be updated as more organizations adopt the ontology.
+- **Autopsy ICAC Workflow** — A re-imagined version of [Autopsy](https://www.autopsy.com/) with a purpose-built ICAC workflow, currently in development through 2026.
+- **Child Abduction Investigation Manager** — A prototype investigation management tool built on CAC Ontology for coordinating child abduction cases.
+
+We plan to begin holding public training sessions to teach colleagues in collaborating organizations how to build on CAC Ontology in their own tools and workflows.
 
 ## Become an Adopter
 
