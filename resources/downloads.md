@@ -42,7 +42,7 @@ Ontology files are located in the `ontology/` directory (97 files total, 2,209 c
 - And 25+ additional modules
 
 #### Validation Modules
-- `cacontology-*-shapes.ttl` - 30 SHACL validation shapes modules
+- `cacontology-*-shapes.ttl` - SHACL validation shapes for spine and domain modules
 
 ### Example Files
 

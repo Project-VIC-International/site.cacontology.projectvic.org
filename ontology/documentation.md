@@ -59,19 +59,20 @@ Each ontology module includes inline documentation in RDF/OWL format:
 
 ## Examples
 
-The repository includes 56 real-world example knowledge graphs:
+The repository includes **61** real-world example knowledge graphs (v3.1.0):
 
 - Located in the `examples_knowledge_graphs/` directory
 - Based on actual law enforcement cases
 - Demonstrating practical applications
 - See the [Examples Gallery](/examples) for more information
+- For application modeling, also see the [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK) JSON-LD examples and MCP workflow
 
 ## SPARQL Queries
 
 Example SPARQL queries are available in:
 
-- `example_SPARQL_queries/` directory
-- Analytics and query examples
+- `example_SPARQL_queries/` directory (**32** suites in v3.1.0)
+- Analytics and query examples for ontology example graphs
 - Common investigation patterns
 
 ## Validation Documentation

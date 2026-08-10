@@ -17,6 +17,7 @@ Before joining, familiarize yourself with:
 - [Getting Started Guide]({{ '/getting-started' | relative_url }}) - Introduction to CAC Ontology
 - [Ontology Documentation]({{ '/ontology' | relative_url }}) - Technical documentation
 - [Examples]({{ '/examples' | relative_url }}) - Real-world use cases
+- [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK) - Recommended developer / AI modeling toolkit
 - [GitHub Repository](https://github.com/Project-VIC-International/CAC-Ontology) - Source code and issues
 
 ### 2. Set Up Your Environment

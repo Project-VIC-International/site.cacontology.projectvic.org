@@ -148,7 +148,7 @@ docker compose -f testing/docker-compose.yaml up -d
 
 4. **Access Resources**: Browse [Resources]({{ '/resources' | relative_url }}) for downloads, publications, and reference materials.
 
-5. **For Developers**: Check out the [Developer Guide]({{ '/developers' | relative_url }}) for detailed instructions on adoption, mapping, and integration.
+5. **For Developers**: Check out the [Developer Guide]({{ '/developers' | relative_url }}) and the [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK) for adoption, mapping, and integration.
 
 ## Model investigation data with AI (recommended starting point)
 

@@ -6,11 +6,13 @@ permalink: /examples
 
 # Examples & Gallery
 
-CAC Ontology includes a growing set of real-world example suites based on public information. Each suite typically includes:
+CAC Ontology includes a growing set of real-world example suites based on public information. In the **CAC Ontology repository**, each suite typically includes:
 
 - an example knowledge graph in Turtle (`.ttl`)
 - an investigator-focused SPARQL analytics suite (`.rq`)
 - and, in many cases, captured evidence artifacts (to keep the work explainable)
+
+For **application modeling**, prefer the [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK) examples and MCP workflow, which produce validated **JSON-LD** graphs (and optional reproducible builders). SPARQL analytics suites are part of the ontology's example gallery, not a required SDK deliverable for every modeling run.
 
 To stay current, this website links to the canonical examples in GitHub (the CAC Ontology repository is the source of truth).
 

@@ -11,7 +11,7 @@ Welcome to the CAC Ontology Developer Guide. This documentation is designed for 
 ## Choose your path
 
 - **Model with the CASE/UCO SDK**: Use typed builders in Python, C#, Java, or Rust — or the MCP server with an LLM — to produce validated CASE/UCO/CAC graphs. See [Model with AI]({{ '/developers/ai-modeling' | relative_url }}) and https://github.com/vulnmaster/CASE-UCO-SDK
-- **Model documents with AI**: Start from a document (press release, report, policy memo, tool export) and produce `.ttl` / JSON-LD + `.rq` with an evidence trail.
+- **Model documents with AI**: Start from a document (press release, report, policy memo, court filing, tool export): `process_document_file` → route → build graph → `validate_graph`. Primary interchange is **JSON-LD**.
 - **Map existing structured data**: You already have a database, schema, or JSON model and want to map it into CAC Ontology classes/properties.
 
 ## CASE/UCO SDK
@@ -58,7 +58,7 @@ The CAC Ontology is designed for seamless integration with the broader cyber-inv
 
 ## Serialization
 
-We recommend using **Turtle (.ttl)** or **JSON-LD** for serializing CAC Ontology data. These formats are human-readable (Turtle) and web-friendly (JSON-LD).
+For application and SDK adopters, prefer **JSON-LD** (the CASE/UCO SDK default). **Turtle (`.ttl`)** remains excellent for ontology modules and human-authored CAC Ontology example suites. Both are valid RDF serializations.
 
 **Example Turtle Serialization:**
 

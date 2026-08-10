@@ -54,9 +54,9 @@ Comprehensive documentation in the [GitHub repository](https://github.com/Projec
 
 ### Related Standards
 
-- **CASE Ontology** - [caseontology.org](https://caseontology.org)
+- **CASE Ontology** - [caseontology.org](https://caseontology.org) (CAC Ontology v3.1.0 pins **CASE/UCO 1.5.0**)
 - **UCO** - Unified Cyber Ontology
-- **gUFO** - Unified Foundational Ontology
+- **gUFO** - Unified Foundational Ontology (pinned to **1.0.0** in v3.1.0)
 - **SHACL** - Shapes Constraint Language for validation
 - **RDF/OWL** - Resource Description Framework and Web Ontology Language
 
@@ -65,19 +65,26 @@ Comprehensive documentation in the [GitHub repository](https://github.com/Projec
 ### Getting Started
 
 - [Getting Started Guide](/getting-started) - Step-by-step introduction
-- [Examples](/examples) - Real-world examples and use cases
+- [Model with AI](/developers/ai-modeling) - CASE/UCO SDK MCP workflow
+- [Examples](/examples) - Real-world CAC Ontology example suites
 
 ### Technical Guides
 
+- [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK) - multi-language bindings, recipes, and MCP server
 - Module-specific guides in repository documentation
 - SPARQL query examples in `example_SPARQL_queries/` directory
 - Validation guides in repository
 
 ## API Reference
 
+### CASE/UCO SDK
+
+Typed builders and validation APIs for Python, C#, Java, and Rust:
+https://github.com/vulnmaster/CASE-UCO-SDK
+
 ### Python Tools
 
-Python API documentation (when available) in the repository.
+Additional Python tooling is also available in the CAC Ontology repository.
 
 ### SPARQL Endpoints
 
