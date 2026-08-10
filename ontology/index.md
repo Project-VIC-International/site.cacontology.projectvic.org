@@ -12,7 +12,7 @@ The CAC (Crimes Against Children) Ontology Family provides a comprehensive seman
 
 ## Overview
 
-The CAC Ontology Family consists of **35+ specialized modules** organized into six domain areas plus a core semantic spine and bridge layer, enhanced with comprehensive gUFO (Unified Foundational Ontology) integration for improved semantic precision, temporal modeling, and validation capabilities. **v3.0.0** introduces the **Semantic Spine** (`cac-core:` namespace) — a stable, top-level class hierarchy that mediates all alignment to gUFO, UCO, and CASE, giving domain modules a single, predictable anchoring layer.
+The CAC Ontology Family consists of **35+ specialized modules** organized into six domain areas plus a core semantic spine and bridge layer, enhanced with comprehensive gUFO (Unified Foundational Ontology) integration for improved semantic precision, temporal modeling, and validation capabilities. **v3.0.0** introduced the **Semantic Spine** (`cac-core:` namespace) — a stable, top-level class hierarchy that mediates all alignment to gUFO, UCO, and CASE. **v3.1.0** (current) expands that spine with ConditioningPhase and CaseLinker lifecycle modeling, pins imports to **CASE/UCO 1.5.0** and **gUFO 1.0.0**, and uses stable unversioned ontology document IRIs with versioning via `owl:versionIRI`.
 
 **Namespace**: `https://cacontology.projectvic.org`
 **Spine Namespace**: `https://cacontology.projectvic.org/core#` (prefix `cac-core:`)
@@ -90,18 +90,29 @@ CAC Ontology extends UCO and CASE, which are part of the Linux Foundation Cyber 
 - Cross-reference validation and business rule enforcement
 - SPARQL-based constraints for advanced validation
 
-## What's new in v3.0.0
+## What's new in v3.1.0
 
-v3.0.0 is a **major architectural release** that introduces:
+v3.1.0 expands investigation modeling on the Semantic Spine:
+
+- **ConditioningPhase** and CaseLinker exploitation-lifecycle state-machine extensions
+- Legal-outcomes expansion (charging instruments, conviction records, supervised release, payment schedules)
+- Structured NCMEC aggregate-report statistics, CyberTip identifier extraction, and jurisdiction routing
+- Attribution / account-IP correlation evidence, fabricated personas, image-leak threats, and victim vulnerability contexts
+- Pinned **CASE/UCO 1.5.0** and **gUFO 1.0.0** imports
+- Unversioned ontology document IRIs with `owl:versionIRI` versioning
+- **2,209 classes**, **2,527 properties**, **61** example knowledge graphs, **32** SPARQL suites
+- AI-assisted modeling directed through the [CASE/UCO SDK MCP Server](https://github.com/vulnmaster/CASE-UCO-SDK)
+
+### Earlier: v3.0.0 Semantic Spine
+
+v3.0.0 was the major architectural release that introduced:
 
 - **Semantic Spine** (`cac-core:` namespace): A stable, top-level class hierarchy with 7 foundational abstract classes that all domain modules anchor to
 - **Bridge modules**: Dedicated `bridge-gufo`, `bridge-case`, and `bridge-uco` modules for external ontology alignment via `skos:exactMatch`
 - **Module renaming for clarity**: `ai-generated-content` → `ai-csam`, `soe` → `sadistic-online-exploitation`, `sentencing` → `legal-outcomes`
 - **Temporal lifecycle module** with investigation phase modeling
-- **56 example knowledge graphs** and **28 SPARQL query files**
-- Corrected subclass hierarchies across all domain modules
 
-### Recent releases (2.10 - 2.12)
+### Recent prior releases (2.10 - 2.12)
 
 - **v2.12.0**: Victim Recantation module — statement lifecycle, risk factors, coercive pressure, and post-recantation response
 - **v2.11.0**: Knowledge Synthesis module — report/artifact modeling with audit-safe evidence alignment
@@ -145,7 +156,7 @@ CAC Ontology extends and integrates with:
 - **UCO**: Unified Cyber Ontology
 - **gUFO**: Unified Foundational Ontology
 
-In v3.0.0, all alignment to these external ontologies is mediated through the **Semantic Spine** and **Bridge modules**, giving domain modules a single, predictable anchoring layer rather than direct cross-ontology subclassing.
+Alignment to these external ontologies is mediated through the **Semantic Spine** and **Bridge modules**, giving domain modules a single, predictable anchoring layer rather than direct cross-ontology subclassing. From v3.1.0 onward, CASE/UCO imports are pinned to **1.5.0** and gUFO imports to **1.0.0**.
 
 ## Documentation Resources
 

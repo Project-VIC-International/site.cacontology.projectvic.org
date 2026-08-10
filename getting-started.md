@@ -11,14 +11,17 @@ Welcome to the CAC (Crimes Against Children) Ontology Family! This guide will he
 ## Choose your path
 
 - **I want a plain-language overview**: Start with Key Concepts and the “Plain language” section below.
-- **I want to model a document with AI**: Start with [Model Documents with AI]({{ '/developers/ai-modeling' | relative_url }}).
+- **I want to model investigation data with AI**: Start with [Model with AI]({{ '/developers/ai-modeling' | relative_url }}) and the [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK).
 - **I want to integrate CAC into a system**: Start with the [Developer Guide]({{ '/developers' | relative_url }}).
+- **I want the slide deck**: Open the [CAC Ontology presentation](https://www.figma.com/deck/sP6RILkazvPti5xx3DVqnl){:target="_blank" rel="noopener noreferrer"}.
 
 ## What is CAC Ontology?
 
-The CAC Ontology Family is a comprehensive semantic framework for modeling child exploitation investigations, operations, legal processes, reporting, offender tradecraft, and digital forensics activities. It extends the **Unified Cyber Ontology (UCO)**, the **Cyber-investigation Analysis Standard Expression (CASE) Ontology**, and the lightweight version of the **Unified Foundational Ontology (gUFO)**. **v3.0.0** introduces the **Semantic Spine** (`cac-core:` namespace) — a stable, top-level class hierarchy that mediates all alignment to gUFO, UCO, and CASE, giving domain modules a single, predictable anchoring layer.
+The CAC Ontology Family is a comprehensive semantic framework for modeling child exploitation investigations, operations, legal processes, reporting, offender tradecraft, and digital forensics activities. It extends the **Unified Cyber Ontology (UCO)**, the **Cyber-investigation Analysis Standard Expression (CASE) Ontology**, and the lightweight version of the **Unified Foundational Ontology (gUFO)**.
 
-The CAC Ontology is shepherded by **Project VIC International**, but further development of this initiative is open to any participant. The ontology represents concepts used globally by government and law enforcement agencies, NGOs, academic organizations, and commercial industry, and we plan to continue evolving this family of ontologies to represent new victim-centric language as it develops worldwide.
+**v3.0.0** introduced the **Semantic Spine** (`cac-core:` namespace) — a stable, top-level class hierarchy that mediates all alignment to gUFO, UCO, and CASE. **v3.1.0** (current) expands investigation modeling on that spine, pins imports to **CASE/UCO 1.5.0** and **gUFO 1.0.0**, and directs AI-assisted modeling through the CASE/UCO SDK MCP server.
+
+The CAC Ontology is shepherded by **Project VIC International**, which is building its Technology Ecosystem — including **VICTrace** — on this open semantic foundation. Further development remains open to any participant. The ontology represents concepts used globally by government and law enforcement agencies, NGOs, academic organizations, and commercial industry, and we plan to continue evolving this family of ontologies to represent new victim-centric language as it develops worldwide.
 
 ## Plain language (what the files mean)
 
@@ -147,21 +150,23 @@ docker compose -f testing/docker-compose.yaml up -d
 
 5. **For Developers**: Check out the [Developer Guide]({{ '/developers' | relative_url }}) for detailed instructions on adoption, mapping, and integration.
 
-## Model a document with AI (recommended starting point)
+## Model investigation data with AI (recommended starting point)
 
-If your starting point is a press release, report, or tool export (instead of a pre-structured database), the fastest way to begin is the AI-assisted modeling workflow:
+If your starting point is a press release, report, or tool export (instead of a pre-structured database), the fastest way to begin is the CASE/UCO SDK MCP workflow:
 
-- Guide: [Model Documents with AI]({{ '/developers/ai-modeling' | relative_url }})
-- Canonical prompt used by the workflow: https://github.com/Project-VIC-International/CAC-Ontology/blob/main/agent.md
-- Latest ontology changes and example suites: https://github.com/Project-VIC-International/CAC-Ontology/blob/main/CHANGELOG.md
+- Guide: [Model with AI]({{ '/developers/ai-modeling' | relative_url }})
+- CASE/UCO SDK (Python, C#, Java, Rust + MCP server): https://github.com/vulnmaster/CASE-UCO-SDK
+- Latest release: https://github.com/Project-VIC-International/CAC-Ontology/releases/tag/v3.1.0
+- Changelog: https://github.com/Project-VIC-International/CAC-Ontology/blob/main/CHANGELOG.md
 
 ## Integration with CASE and UCO
 
-CAC Ontology is designed to work seamlessly with CASE and UCO ontologies. When using CAC Ontology, you can:
+CAC Ontology is designed to work seamlessly with CASE and UCO. **v3.1.0 pins imports to CASE/UCO 1.5.0**. When using CAC Ontology, you can:
 
 - Import CASE and UCO classes and properties
 - Extend CASE investigation structures with CAC-specific concepts
 - Maintain compatibility with existing CASE/UCO tools and workflows
+- Use the [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK) to generate validated JSON-LD graphs from application code or AI agents
 - Leverage UCO's foundational cyber investigation concepts
 
 ## Documentation

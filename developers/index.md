@@ -10,8 +10,18 @@ Welcome to the CAC Ontology Developer Guide. This documentation is designed for 
 
 ## Choose your path
 
-- **Model documents with AI**: Start from a document (press release, report, policy memo, tool export) and produce `.ttl` + `.rq` with an evidence trail. See [Model Documents with AI]({{ '/developers/ai-modeling' | relative_url }}).
+- **Model with the CASE/UCO SDK**: Use typed builders in Python, C#, Java, or Rust — or the MCP server with an LLM — to produce validated CASE/UCO/CAC graphs. See [Model with AI]({{ '/developers/ai-modeling' | relative_url }}) and https://github.com/vulnmaster/CASE-UCO-SDK
+- **Model documents with AI**: Start from a document (press release, report, policy memo, tool export) and produce `.ttl` / JSON-LD + `.rq` with an evidence trail.
 - **Map existing structured data**: You already have a database, schema, or JSON model and want to map it into CAC Ontology classes/properties.
+
+## CASE/UCO SDK
+
+The [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK) is the fastest path for developers and AI agents to model cyber-domain and CAC investigation data:
+
+- Multi-language bindings: **Python**, **C#**, **Java**, **Rust**
+- MCP server with dozens of modeling recipes
+- Support for CASE, UCO, CAC Ontology, and SOLVE-IT
+- Graph validation and change-proposal workflows aligned with CAC Ontology v3.1.0 / CASE/UCO 1.5.0
 
 ## Adoption & Mapping
 
@@ -25,7 +35,7 @@ All CAC Ontology modules utilize a standardized namespace structure. When genera
 
 | Prefix | URI | Description |
 |--------|-----|-------------|
-| `cac-core` | `https://cacontology.projectvic.org/core#` | Semantic Spine (v3.0.0) |
+| `cac-core` | `https://cacontology.projectvic.org/core#` | Semantic Spine (v3.1.0) |
 | `cacontology` | `https://cacontology.projectvic.org#` | Base namespace |
 | `cacontology-core` | `https://cacontology.projectvic.org/core#` | Core investigation framework |
 | `uco-core` | `https://ontology.unifiedcyberontology.org/uco/core/` | UCO Core |
@@ -43,8 +53,8 @@ All CAC Ontology modules utilize a standardized namespace structure. When genera
 
 The CAC Ontology is designed for seamless integration with the broader cyber-investigation ecosystem.
 
--   **CASE & UCO**: CAC Ontology extends the **Cyber-investigation Analysis Standard Expression (CASE)** and **Unified Cyber Ontology (UCO)**. It inherits classes and properties from these standards, allowing you to use CAC-specific concepts alongside standard cyber-investigation structures. This ensures compatibility with tools that support CASE/UCO.
--   **gUFO**: The ontology integrates the **Unified Foundational Ontology (gUFO)** to provide a rigorous metaphysical foundation. In v3.0.0, all gUFO alignment is mediated through the **Semantic Spine** (`cac-core:` namespace) and the `cacontology-bridge-gufo.ttl` bridge module, giving domain modules a single, predictable anchoring layer. This enhances temporal modeling (e.g., roles like 'Suspect' are temporal phases) and enables more robust validation and reasoning capabilities.
+-   **CASE & UCO**: CAC Ontology extends the **Cyber-investigation Analysis Standard Expression (CASE)** and **Unified Cyber Ontology (UCO)**. **v3.1.0 pins imports to CASE/UCO 1.5.0**. It inherits classes and properties from these standards, allowing you to use CAC-specific concepts alongside standard cyber-investigation structures. This ensures compatibility with tools that support CASE/UCO, including the [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK).
+-   **gUFO**: The ontology integrates the **Unified Foundational Ontology (gUFO)** (pinned to **1.0.0** in v3.1.0) to provide a rigorous metaphysical foundation. Alignment is mediated through the **Semantic Spine** (`cac-core:` namespace) and the `cacontology-bridge-gufo.ttl` bridge module, giving domain modules a single, predictable anchoring layer. This enhances temporal modeling (e.g., roles like 'Suspect' are temporal phases) and enables more robust validation and reasoning capabilities.
 
 ## Serialization
 
@@ -91,6 +101,10 @@ You can validate your data using the provided Docker configuration. This system 
 
 We provide extensive resources to assist with implementation:
 
+### CASE/UCO SDK
+- SDK repository: https://github.com/vulnmaster/CASE-UCO-SDK
+- AI / MCP workflow: [Model with AI]({{ '/developers/ai-modeling' | relative_url }})
+
 ### Example Knowledge Graphs
 Review the [Examples & Gallery]({{ '/examples' | relative_url }}) for curated entry points, or browse the canonical example suite in GitHub:
 
@@ -103,6 +117,7 @@ Browse the canonical SPARQL suites in GitHub:
 
 ### Documentation
 - Repository documentation (canonical): https://github.com/Project-VIC-International/CAC-Ontology/tree/main/docs
+- Presentation: https://www.figma.com/deck/sP6RILkazvPti5xx3DVqnl
 
 ## Contributing
 

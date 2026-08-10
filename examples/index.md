@@ -16,6 +16,12 @@ To stay current, this website links to the canonical examples in GitHub (the CAC
 
 ## Featured example suites (good starting points)
 
+### Conditioning phase & CaseLinker state machine (v3.1.0)
+
+- Conditioning-phase example: https://github.com/Project-VIC-International/CAC-Ontology/blob/main/examples_knowledge_graphs/conditioning-phase-offense-trajectory-example.ttl
+- CaseLinker state-machine example: https://github.com/Project-VIC-International/CAC-Ontology/blob/main/examples_knowledge_graphs/caselinker-state-machine-extensions-example.ttl
+- CaseLinker analytics: https://github.com/Project-VIC-International/CAC-Ontology/blob/main/example_SPARQL_queries/caselinker-state-machine-analytics.rq
+
 ### Missing child / platform data access (v2.10.0)
 
 - Example KG: https://github.com/Project-VIC-International/CAC-Ontology/blob/main/examples_knowledge_graphs/police1-modern-missing-child-investigations-2026-example.ttl

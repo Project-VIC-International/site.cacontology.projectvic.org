@@ -8,6 +8,19 @@ permalink: /resources/libraries
 
 Software libraries, tools, and integrations for working with CAC Ontology.
 
+## CASE/UCO SDK (recommended)
+
+The [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK) is the primary developer toolkit for building validated CASE/UCO and CAC Ontology graphs:
+
+- **Languages**: Python, C#, Java, Rust
+- **MCP server**: LLM-ready ontology discovery, modeling recipes, validation, extension design, and change proposals
+- **Bindings**: CASE, UCO, CAC Ontology, SOLVE-IT, and additional cyber-domain extension ontologies
+- **Aligned with**: CAC Ontology v3.1.0 and CASE/UCO 1.5.0 interoperability
+
+Install and usage details: https://github.com/vulnmaster/CASE-UCO-SDK
+
+See also: [Model with AI]({{ '/developers/ai-modeling' | relative_url }})
+
 ## Python Tools
 
 The CAC Ontology repository includes Python tools for working with the ontology:
@@ -96,11 +109,13 @@ Standard RDF validators can be used:
 ### CASE Integration
 
 Libraries for working with CASE Ontology (which CAC extends):
+- [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK) — typed builders and validation for CASE/UCO 1.5.0
 - See [caseontology.org](https://caseontology.org) for CASE tools and libraries
 
 ### UCO Integration
 
 Libraries for Unified Cyber Ontology:
+- [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK)
 - See UCO project resources for integration libraries
 
 ## Contributing Libraries

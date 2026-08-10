@@ -6,10 +6,15 @@ This is the Jekyll-based website for the CAC (Crimes Against Children) Ontology 
 
 The CAC Ontology Family is a comprehensive semantic framework for modeling child exploitation investigations, operations, legal processes, reporting, offender tradecraft, and digital forensics activities. This website provides documentation, examples, and resources for using the ontology.
 
+**Current ontology release:** [v3.1.0](https://github.com/Project-VIC-International/CAC-Ontology/releases/tag/v3.1.0) (CASE/UCO 1.5.0)
+
 ## Repository
 
 The main CAC Ontology repository is located at:
 - [github.com/Project-VIC-International/CAC-Ontology](https://github.com/Project-VIC-International/CAC-Ontology)
+
+Related toolkit:
+- [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK) — multi-language SDK + MCP server
 
 ## Website Structure
 

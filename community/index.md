@@ -31,7 +31,7 @@ We understand that not all language is represented, and we actively seek concept
 ### Join the Community
 
 - **[How to Join]({{ '/community/join' | relative_url }})** - Steps to become part of the community
-- **[Adopters]({{ '/community/adopters' | relative_url }})** - Organizations using CAC Ontology
+- **[Adopters]({{ '/community/adopters' | relative_url }})** - Organizations using CAC Ontology (including VICTrace and the CASE/UCO SDK)
 - **[Meetings]({{ '/community/meetings' | relative_url }})** - Community meetings and events
 
 ### Ways to Contribute

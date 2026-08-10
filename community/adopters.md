@@ -8,10 +8,11 @@ permalink: /community/adopters
 
 ## Project VIC International
 
-Project VIC International is actively building tools on CAC Ontology and CASE/UCO:
+Project VIC International is actively building its **Technology Ecosystem** on CAC Ontology and CASE/UCO as an open semantic foundation:
 
-- **Autopsy ICAC Workflow** — A re-imagined version of [Autopsy](https://www.autopsy.com/) with a purpose-built ICAC workflow, currently in development through 2026.
+- **VICTrace** — Project VIC International's homegrown digital forensics tool built on CAC Ontology and CASE/UCO. VICTrace is in development through 2026 as part of the Technology Ecosystem.
 - **Child Abduction Investigation Manager** — A prototype investigation management tool built on CAC Ontology for coordinating child abduction cases.
+- **CASE/UCO SDK** — A multi-language SDK ([Python, C#, Java, Rust](https://github.com/vulnmaster/CASE-UCO-SDK)) with an MCP server, modeling recipes, and CAC/SOLVE-IT bindings that helps teams model investigation data into validated graphs quickly.
 
 We plan to begin holding public training sessions to teach colleagues in collaborating organizations how to build on CAC Ontology in their own tools and workflows.
 
@@ -46,14 +47,14 @@ Adopters are using CAC Ontology for:
 - **Report Management** - Processing and analyzing tips and reports
 - **Legal Documentation** - Supporting prosecution and legal processes
 - **Research and Analysis** - Academic research and pattern analysis
-- **Tool Development** - Building applications and integrations
+- **Tool Development** - Building applications and integrations on the open semantic foundation
 
 ## Benefits of Adoption
 
 Organizations adopting CAC Ontology benefit from:
 
 - **Standardization** - Common data model for investigations
-- **Interoperability** - Compatibility with CASE and UCO tools
+- **Interoperability** - Compatibility with CASE and UCO tools (currently pinned to CASE/UCO 1.5.0)
 - **Validation** - Built-in SHACL validation for data quality
 - **Community Support** - Access to community resources and expertise
 - **Continuous Improvement** - Regular updates and enhancements
@@ -65,6 +66,7 @@ Adopters have access to:
 - Community forums and discussions
 - Technical documentation
 - Example files and use cases
+- The [CASE/UCO SDK](https://github.com/vulnmaster/CASE-UCO-SDK) for developer and AI-assisted modeling
 - Training materials (when available)
 - Direct support channels
 
@@ -73,4 +75,3 @@ Adopters have access to:
 - [Join the Community]({{ '/community/join' | relative_url }})
 - [Community Overview]({{ '/community' | relative_url }})
 - [Contact]({{ '/contact' | relative_url }}) - To become a listed adopter
-

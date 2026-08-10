@@ -20,14 +20,14 @@ git clone https://github.com/Project-VIC-International/CAC-Ontology.git
 
 ### Ontology Modules
 
-Ontology files are located in the `ontology/` directory (97 files total, 2,154 classes, 2,443 properties):
+Ontology files are located in the `ontology/` directory (97 files total, 2,209 classes, 2,527 properties in **v3.1.0**):
 
-#### Semantic Spine & Bridges (v3.0.0)
-- `cacontology-core-spine.ttl` - Top-level class hierarchy
+#### Semantic Spine & Bridges
+- `cacontology-core-spine.ttl` - Top-level class hierarchy (includes ConditioningPhase in v3.1.0)
 - `cacontology-core-spine-shapes.ttl` - Spine SHACL shapes
-- `cacontology-bridge-gufo.ttl` - gUFO alignment bridge
-- `cacontology-bridge-case.ttl` - CASE alignment bridge
-- `cacontology-bridge-uco.ttl` - UCO alignment bridge
+- `cacontology-bridge-gufo.ttl` - gUFO alignment bridge (gUFO 1.0.0)
+- `cacontology-bridge-case.ttl` - CASE alignment bridge (CASE 1.5.0)
+- `cacontology-bridge-uco.ttl` - UCO alignment bridge (UCO 1.5.0)
 
 #### Core Framework
 - `cacontology-core.ttl`
@@ -46,17 +46,25 @@ Ontology files are located in the `ontology/` directory (97 files total, 2,154 c
 
 ### Example Files
 
-56 example knowledge graphs are available in the `examples_knowledge_graphs/` directory, with 28 SPARQL analytics suites:
+61 example knowledge graphs are available in the `examples_knowledge_graphs/` directory, with 32 SPARQL analytics suites:
 
 - Real-world investigation examples
 - Use case demonstrations
-- Pattern examples
+- Pattern examples (including v3.1.0 ConditioningPhase, CaseLinker, legal-outcomes, and NCMEC suites)
 
 ## Software and Tools
 
+### CASE/UCO SDK (recommended for application developers)
+
+Multi-language SDK for building validated CASE/UCO/CAC graphs:
+
+- Repository: https://github.com/vulnmaster/CASE-UCO-SDK
+- Languages: Python, C#, Java, Rust
+- Includes an MCP server and modeling recipes for AI-assisted development
+
 ### Python Tools
 
-The repository includes Python tools for working with the ontology:
+The CAC Ontology repository includes Python tools for working with the ontology:
 
 1. Clone the repository:
    ```bash

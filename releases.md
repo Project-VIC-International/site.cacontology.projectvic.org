@@ -14,7 +14,26 @@ The latest stable release of CAC Ontology is available on GitHub:
 
 - Releases: https://github.com/Project-VIC-International/CAC-Ontology/releases
 
-### Latest: v3.0.0 (Mar 21, 2026)
+### Latest: v3.1.0 (Aug 9, 2026)
+
+v3.1.0 expands investigation modeling while strengthening interoperability, validation, and agent guidance. It pins CASE/UCO imports to **1.5.0** and gUFO imports to **1.0.0**, and directs AI-assisted modeling through the [CASE/UCO SDK MCP Server](https://github.com/vulnmaster/CASE-UCO-SDK).
+
+- Release tag: https://github.com/Project-VIC-International/CAC-Ontology/releases/tag/v3.1.0
+- Changelog entry: https://github.com/Project-VIC-International/CAC-Ontology/blob/v3.1.0/CHANGELOG.md
+
+Key deliverables:
+
+- **Conditioning macro-phase** (`cac-core:ConditioningPhase`) and **CaseLinker** exploitation-lifecycle state-machine extensions
+- **Legal-outcomes expansion**: charging instruments, conviction records, supervised-release conditions, and payment schedules
+- **NCMEC modeling**: structured aggregate-report statistics, CyberTip identifier extraction, and jurisdiction-routing concepts
+- **Attribution & vulnerability**: account/IP correlation evidence, fabricated personas, image-leak threats, victim vulnerability contexts, and core case-identification properties
+- **Stable unversioned ontology document IRIs**, with versioning expressed through `owl:versionIRI`
+- **Pinned imports**: CASE/UCO **1.5.0**, gUFO **1.0.0**
+- **2,209 classes** and **2,527 properties** across **97** ontology files
+- **61** example knowledge graphs and **32** SPARQL analytics suites
+- Validation: 167 SHACL validations, 13 focused unit tests, and 226 top-level SPARQL query blocks parsed
+
+### v3.0.0 (Mar 21, 2026)
 
 v3.0.0 is a **major architectural release** introducing the **Semantic Spine** — a three-layer architecture (`cac-core-spine` → `cac-core` → domain modules) with dedicated bridge modules for gUFO, UCO, and CASE alignment.
 
@@ -83,15 +102,16 @@ For detailed version history and changelog, see the [CHANGELOG.md](https://githu
 
 ### Current Version
 
-The CAC Ontology Family follows semantic versioning principles. The current version (v3.0.0) includes:
+The CAC Ontology Family follows semantic versioning principles. The current version (v3.1.0) includes:
 
 - **35+ specialized ontology modules** organized into six domain areas plus a core semantic spine and bridge layer
-- **30 SHACL validation modules** with comprehensive business rules
-- **Semantic Spine** (`cac-core:` namespace) — stable, top-level class hierarchy mediating all alignment to gUFO, UCO, and CASE
+- **Comprehensive SHACL validation** (167 validations in the v3.1.0 release suite)
+- **Semantic Spine** (`cac-core:` namespace) — stable, top-level class hierarchy mediating all alignment to gUFO, UCO, and CASE, including ConditioningPhase
 - **Bridge modules** for gUFO, CASE, and UCO alignment
-- **gUFO integration** for enhanced semantic precision
-- **Full CASE/UCO compatibility** for seamless integration
-- **97 ontology files** with 2,154 classes and 2,443 properties
+- **Pinned CASE/UCO 1.5.0** and **gUFO 1.0.0** imports
+- **Stable unversioned ontology document IRIs** with `owl:versionIRI` versioning
+- **97 ontology files** with 2,209 classes and 2,527 properties
+- **AI-assisted modeling** via the [CASE/UCO SDK MCP Server](https://github.com/vulnmaster/CASE-UCO-SDK)
 
 ### Release Types
 
@@ -156,9 +176,9 @@ CAC Ontology follows [Semantic Versioning](https://semver.org/) principles:
 ### CASE/UCO Compatibility
 
 All releases maintain compatibility with:
-- **CASE Ontology**: Full compatibility with CASE investigation structures
-- **UCO**: Compatible with Unified Cyber Ontology foundational concepts
-- **gUFO**: Integration with Unified Foundational Ontology patterns
+- **CASE Ontology**: Full compatibility with CASE investigation structures (v3.1.0 pins imports to **CASE 1.5.0**)
+- **UCO**: Compatible with Unified Cyber Ontology foundational concepts (v3.1.0 pins imports to **UCO 1.5.0**)
+- **gUFO**: Integration with Unified Foundational Ontology patterns (v3.1.0 pins imports to **gUFO 1.0.0**)
 
 ### Backward Compatibility
 

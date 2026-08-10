@@ -41,6 +41,27 @@ title: Home
   </div>
 </section>
 
+<section class="intro-section" aria-labelledby="latest-release-heading">
+  <h2 id="latest-release-heading">Latest release: v3.1.0</h2>
+  <p>
+    <strong>CAC Ontology v3.1.0</strong> expands investigation modeling while pinning interoperability to
+    <strong>CASE/UCO 1.5.0</strong> and <strong>gUFO 1.0.0</strong>. Highlights include the spine-level Conditioning
+    macro-phase, CaseLinker exploitation-lifecycle extensions, richer legal-outcomes modeling, structured NCMEC
+    aggregate-report statistics, and attribution / victim-vulnerability concepts.
+  </p>
+  <p>
+    Project VIC International is building its Technology Ecosystem on this open semantic foundation — including
+    <strong>VICTrace</strong> and AI-assisted modeling through the
+    <a href="https://github.com/vulnmaster/CASE-UCO-SDK" target="_blank" rel="noopener noreferrer">CASE/UCO SDK</a>
+    and its MCP server.
+  </p>
+  <div style="margin-top: 1.25rem;">
+    <a href="{{ '/releases' | relative_url }}" class="btn-primary" aria-label="Read CAC Ontology v3.1.0 release notes">Release notes</a>
+    <a href="https://github.com/Project-VIC-International/CAC-Ontology/releases/tag/v3.1.0" class="btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="View v3.1.0 on GitHub">GitHub release</a>
+    <a href="https://www.figma.com/deck/sP6RILkazvPti5xx3DVqnl" class="btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Open CAC Ontology presentation">Presentation</a>
+  </div>
+</section>
+
 <section class="intro-section" aria-labelledby="express-exchange-heading">
   <h2 id="express-exchange-heading">Express & Exchange</h2>
   <p>
@@ -50,7 +71,7 @@ title: Home
     The power of CAC Ontology is that it provides a common language to support automated normalization, combination and validation of varied information sources to facilitate analysis and exploration of investigative questions (who, when, how long, where). In addition to representing tool results, CAC Ontology ensures that analysis results can be traced back to their source(s), keeping track of when, where and who used which tools to perform investigative actions on data sources.
   </p>
   <p>
-    CAC Ontology extends the <strong>Unified Cyber Ontology (UCO)</strong>, the <strong>Cyber-investigation Analysis Standard Expression (CASE) Ontology</strong>, and the <strong>Unified Foundational Ontology (gUFO)</strong>. This powerful combination provides specialized modules for modeling child exploitation investigations, operations, legal processes, reporting, offender tradecraft, and digital forensics activities with high semantic precision.
+    CAC Ontology extends the <strong>Unified Cyber Ontology (UCO)</strong>, the <strong>Cyber-investigation Analysis Standard Expression (CASE) Ontology</strong> (currently pinned to <strong>CASE/UCO 1.5.0</strong>), and the <strong>Unified Foundational Ontology (gUFO)</strong>. This powerful combination provides specialized modules for modeling child exploitation investigations, operations, legal processes, reporting, offender tradecraft, and digital forensics activities with high semantic precision.
   </p>
   <p>
     CAC Ontology is part of the Linux Foundation <a href="https://cyberdomainontology.org/" target="_blank" rel="noopener noreferrer">Cyber Domain Ontology</a> ecosystem, which provides a shared foundation for interoperable cyber-investigation information exchange.
@@ -87,28 +108,28 @@ title: Home
   <h2 id="key-features-heading">Key Features</h2>
   <div class="feature-grid">
     <div class="feature-card">
-      <h3>Semantic Spine (v3.0.0)</h3>
-      <p>Stable <code>cac-core:</code> class hierarchy organizing all domain classes by ontological kind (Entity, EnduringEntity, Event, Situation, Role, Phase, and branches) with dedicated bridge modules for gUFO, UCO, and CASE alignment.</p>
+      <h3>Semantic Spine + v3.1.0</h3>
+      <p>Stable <code>cac-core:</code> class hierarchy (Entity, EnduringEntity, Event, Situation, Role, Phase, and branches), now with Conditioning macro-phase and CaseLinker exploitation-lifecycle extensions for offense-trajectory modeling.</p>
     </div>
     <div class="feature-card">
       <h3>35+ Specialized Modules</h3>
-      <p>Comprehensive coverage of child exploitation investigation domains organized into six domain areas plus a core semantic spine and bridge layer, with 2,154 classes and 2,443 properties across 97 ontology files.</p>
+      <p>Comprehensive coverage of child exploitation investigation domains organized into six domain areas plus a core semantic spine and bridge layer, with 2,209 classes and 2,527 properties across 97 ontology files.</p>
     </div>
     <div class="feature-card">
-      <h3>SHACL Validation</h3>
-      <p>30 validation modules with comprehensive business rules ensuring data quality and consistency across all ontology modules, including spine shapes.</p>
+      <h3>CASE/UCO SDK + MCP</h3>
+      <p>Model investigation data quickly into validated CASE/UCO/CAC graphs with Python, C#, Java, and Rust bindings, dozens of modeling recipes, and an LLM-ready MCP server for ontology discovery and validation.</p>
     </div>
     <div class="feature-card">
-      <h3>UCO/CASE/gUFO Compatibility</h3>
-      <p>Seamless integration with Unified Cyber Ontology, CASE, and gUFO (Unified Foundational Ontology) frameworks via bridge modules, providing enhanced semantic precision and temporal modeling.</p>
+      <h3>CASE/UCO 1.5.0 + gUFO</h3>
+      <p>Pinned imports to CASE/UCO 1.5.0 and gUFO 1.0.0, with bridge modules for alignment and stable unversioned ontology document IRIs (versioning via <code>owl:versionIRI</code>).</p>
     </div>
     <div class="feature-card">
       <h3>Real-World Examples</h3>
-      <p>56 example knowledge graphs based on actual law enforcement cases demonstrating practical applications of the ontology in real investigations, with 28 SPARQL analytics suites.</p>
+      <p>61 example knowledge graphs based on actual law enforcement cases demonstrating practical applications of the ontology in real investigations, with 32 SPARQL analytics suites.</p>
     </div>
     <div class="feature-card">
-      <h3>International Support</h3>
-      <p>Global coordination frameworks supporting 120+ countries with international legal harmonization and cross-border operation capabilities.</p>
+      <h3>Technology Ecosystem</h3>
+      <p>Project VIC International is building its open ecosystem — including VICTrace digital forensics — on CAC Ontology and CASE/UCO as the shared semantic foundation.</p>
     </div>
   </div>
 </section>
@@ -146,6 +167,14 @@ title: Home
     <div class="feature-card">
       <h3><a href="{{ '/community/adopters' | relative_url }}">Adopters</a></h3>
       <p>See organizations and agencies using CAC Ontology in their investigations and operations.</p>
+    </div>
+    <div class="feature-card">
+      <h3><a href="https://github.com/vulnmaster/CASE-UCO-SDK" target="_blank" rel="noopener noreferrer">CASE/UCO SDK</a></h3>
+      <p>Multi-language SDK and MCP server for rapid, validated modeling of cyber-investigation and CAC domain data.</p>
+    </div>
+    <div class="feature-card">
+      <h3><a href="https://www.figma.com/deck/sP6RILkazvPti5xx3DVqnl" target="_blank" rel="noopener noreferrer">Presentation</a></h3>
+      <p>View the CAC Ontology presentation deck covering the ontology, interoperability, and ecosystem direction.</p>
     </div>
   </div>
 </section>
